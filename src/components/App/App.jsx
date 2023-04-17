@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 import './App.css';
 
@@ -65,7 +66,16 @@ function App() {
             exact
             path="/info"
           >
+         
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // ⭐️ logged in shows profile page
+            exact
+            path="/profile"
+          >
+            <ProfilePage />
           </ProtectedRoute>
 
           <Route
@@ -115,7 +125,7 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */ }
       </div>
     </Router>
   );
