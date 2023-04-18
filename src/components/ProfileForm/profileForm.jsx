@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -18,6 +18,7 @@ import { number } from 'prop-types';
 
 function ProfileForm(){
     const dispatch = useDispatch();
+    const user = useSelector((store) => store.user);
 
     let [newInput, setNewInput] = useState({ feet: '', inches: '', weight: 0 })
     let [gender, setGender] = useState(true)
@@ -43,12 +44,6 @@ function ProfileForm(){
         alert('Success! Go home to see Results')
     }
 
-    // const addNewInput = event => {
-    //     event.preventDefault();
-    //     console.log('feet:', newInput.feet, 'inches:', newInput.inches, 'weight:', newInput.weight);
-    //     dispatch({ type: 'POST_INFO', payload: newInput});
-
-    // };
 
     const addNewInput = event => {
         event.preventDefault();
@@ -58,11 +53,15 @@ function ProfileForm(){
        }else{
         gender = 'female'
        }
-//     const updatedGender = gender ? 'male' : 'female';
-// setGender(updatedGender);
+
 
         console.log('total inches:', height, 'weight:', Number(newInput.weight), gender);
-        dispatch({ type: 'POST_INFO', payload: {  height, weight: Number(newInput.weight), gender } });
+        dispatch({ 
+            type: 'POST_INFO',
+             payload: {  height, weight: Number(newInput.weight), gender 
+                } }), 
+        dispatch({ type: 'CHANGE_PROFILE_CREATED', payload: user.id}),//put request to change profile created to true...this is for conditional rendering
+        window.location.reload()
 
     };
 
@@ -106,8 +105,6 @@ function ProfileForm(){
                                 onChange={handleInches}
                                 value={newInput.inches}
                                 type='number'
-
-
                             />
                             <FormHelperText id="outlined-weight-helper-text">Height</FormHelperText>
                         </FormControl>

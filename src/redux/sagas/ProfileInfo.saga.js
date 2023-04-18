@@ -16,9 +16,8 @@ function* fetchProfileInfo() {
 
 
 function* ProfileInfoSaga() {
-
     yield takeLatest('FETCH_PROFILE_INFO', fetchProfileInfo)
-
+    
 }
 
 export default ProfileInfoSaga;

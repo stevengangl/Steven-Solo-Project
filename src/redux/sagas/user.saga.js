@@ -24,8 +24,20 @@ function* fetchUser() {
   }
 }
 
+function* editProfileCreated(action){
+  try{
+      yield axios.put(`/api/user/${action.payload}`)
+      console.log('saga reducer',action.payload )
+      // yield put({type:'SET_USER'})
+  }catch(error){
+    error
+  }
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
+  yield takeLatest('CHANGE_PROFILE_CREATED', editProfileCreated);
+
 }
 
 export default userSaga;

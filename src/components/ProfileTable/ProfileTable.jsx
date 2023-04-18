@@ -34,9 +34,9 @@ function ProfileTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-        { info ? (info.map((item) => (
+        { info ? (info.map((item, i) => (
             <TableRow
-              key={item.user_id}
+              key={i}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
@@ -45,6 +45,8 @@ function ProfileTable() {
               <TableCell align="right">{item.gender}</TableCell>
               <TableCell align="right">{item.weight} lbs </TableCell>
               <TableCell align="right">{item.height} inches</TableCell>
+              <TableCell align="right"><button>delete</button></TableCell>
+
             </TableRow>
         ))) : ('loading')
         }
