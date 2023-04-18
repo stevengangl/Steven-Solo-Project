@@ -39,6 +39,10 @@ function ProfileForm(){
         setGender(selectedGender);
     }
 
+    function handleClick(){
+        alert('Success! Go home to see Results')
+    }
+
     // const addNewInput = event => {
     //     event.preventDefault();
     //     console.log('feet:', newInput.feet, 'inches:', newInput.inches, 'weight:', newInput.weight);
@@ -140,7 +144,7 @@ function ProfileForm(){
                         </FormControl>
                         <br></br>
                         {/* <Button variant="contained">Submit</Button> */}
-                        <Button variant="contained" type="submit" endIcon={<SendIcon />}>Submit</Button>
+                        <Button variant="contained" onClick={handleClick}type="submit" endIcon={<SendIcon />}>Submit</Button>
 
 
                     </div>

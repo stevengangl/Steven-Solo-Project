@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper';
 
 
 function ProfileTable() {
+    const user = useSelector((store) => store.user);
 
     const info = useSelector((store) => store.ProfilePageReducer)
     console.log('info:', info)
@@ -26,7 +27,7 @@ function ProfileTable() {
       <Table sx={{ minWidth: 150 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            {/* <TableCell>Data Table</TableCell> */}
+            <TableCell>Name</TableCell>
             <TableCell align="right">Gender</TableCell>
             <TableCell align="right">Weight</TableCell>
             <TableCell align="right">Height</TableCell>
@@ -38,9 +39,9 @@ function ProfileTable() {
               key={item.user_id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              {/* <TableCell component="th" scope="row">
-                {item.id}
-              </TableCell> */}
+              <TableCell component="th" scope="row">
+                {user.username}
+              </TableCell>
               <TableCell align="right">{item.gender}</TableCell>
               <TableCell align="right">{item.weight} lbs </TableCell>
               <TableCell align="right">{item.height} inches</TableCell>
