@@ -33,8 +33,13 @@ function Nav() {
             <Link className="navLink" to="/info">
               Info Page
             </Link>
+
             <Link className="navLink" to="/profile">
               Profile Page
+            </Link>
+
+            <Link className="navLink" to="/calculator">
+              Calculator Page
             </Link>
 
             <LogOutButton className="navLink" />

@@ -91,7 +91,7 @@ function ProfileTable() {
                   <input value={weight} onChange={(event) => setWeight(event.target.value)}></input>
                   <input value={height} onChange={(event) => setHeight(event.target.value)}></input>
                   <button onClick={() => updateItem(item.id)}>Save changes</button>
-                </div> : <button onClick={() => addInputField(item)}>edit</button>}
+                </div> : <button onClick={() => addInputField(item)}>Edit</button>}
 
               </TableRow>
             ))) : ('loading')

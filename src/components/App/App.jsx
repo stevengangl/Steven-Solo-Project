@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import CalculatorPage from '../CalculatorPage/CalculatorPage';
 
 import './App.css';
 
@@ -76,6 +77,14 @@ function App() {
             path="/profile"
           >
             <ProfilePage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // ⭐️ logged in shows calculator page
+            exact
+            path="/calculator"
+          >
+            <CalculatorPage />
           </ProtectedRoute>
 
           <Route
