@@ -43,7 +43,7 @@ function ProfileTable() {
   const [idToEdit, setIdToEdit] = useState('')
 
   const handleGender = (event) => {
-    const selectedGender = parseInt(event.target.value) === 1 ? 'male' : 'female';
+    const selectedGender = parseInt(event.target.value) === 1 ? 'Male' : 'Female';
     setGender(selectedGender);
 }
 
@@ -51,8 +51,8 @@ function ProfileTable() {
     console.log('hello', item.id, item.gender)
 
     setIdToEdit(item.id)
-    setHeight(item.weight)//this autogenerate the edit input field of the input field youre trying to edit
-    setWeight(item.height)
+    setHeight(item.height)//this autogenerate the edit input field of the input field youre trying to edit
+    setWeight(item.weight)
     setGender(item.gender)
     setAge(item.age)
 
