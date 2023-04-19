@@ -20,12 +20,13 @@ function ProfileForm(){
     const dispatch = useDispatch();
     const user = useSelector((store) => store.user);
 
-    let [newInput, setNewInput] = useState({ feet: '', inches: '', weight: 0 })
+    let [newInput, setNewInput] = useState({ feet: '', inches: '', weight: 0, age:0 })
     let [gender, setGender] = useState(true)
 
     //These handlers set the state to equal the input fields
     const handleFeet = (event) => {
         setNewInput({ ...newInput, feet: event.target.value })
+        console.log(newInput)
     };
     const handleInches = (event) => {
         setNewInput({ ...newInput, inches: event.target.value })
@@ -33,6 +34,13 @@ function ProfileForm(){
     const handleWeight = (event) => {
         setNewInput({ ...newInput, weight: event.target.value })
     };
+
+    const handleAge = (event) => {
+        setNewInput({ ...newInput, age: event.target.value })
+        console.log(newInput.age)
+
+    };
+
     //this handlers toggles between true or false depending on what is choosed
     //male = true female = false
     const handleGender = (event) => {
@@ -48,6 +56,8 @@ function ProfileForm(){
     const addNewInput = event => {
         event.preventDefault();
         const height = (newInput.feet) * 12 + parseInt(newInput.inches);
+                console.log('total inches:', height, 'weight:', Number(newInput.weight), gender, newInput.age);
+
        if(gender){
         gender = 'male'
        }else{
@@ -55,10 +65,10 @@ function ProfileForm(){
        }
 
 
-        console.log('total inches:', height, 'weight:', Number(newInput.weight), gender);
+        console.log('total inches:', height, 'weight:', Number(newInput.weight), gender, newInput.age);
         dispatch({ 
             type: 'POST_INFO',
-             payload: {  height, weight: Number(newInput.weight), gender 
+             payload: {  height, weight: Number(newInput.weight), gender, age: Number(newInput.age)
                 } }), 
         dispatch({ type: 'CHANGE_PROFILE_CREATED', payload: user.id}),//put request to change profile created to true...this is for conditional rendering
         window.location.reload()
@@ -68,6 +78,7 @@ function ProfileForm(){
     return (
         <>
             <h2>Enter your info</h2>
+
 
         
             <form onSubmit={addNewInput}>
@@ -128,6 +139,8 @@ function ProfileForm(){
                             />
                             <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText>
                         </FormControl>
+
+                        
                         <FormControl>
                             <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
                             <RadioGroup
@@ -138,6 +151,22 @@ function ProfileForm(){
                                 <FormControlLabel value="1" onChange={handleGender} control={<Radio />} label="Male" />
                                 <FormControlLabel value="2" onChange={handleGender} control={<Radio />} label="Female" />
                             </RadioGroup>
+                        </FormControl>
+
+                        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                            <OutlinedInput
+                                id="4"
+                                endAdornment={<InputAdornment position="end">Age</InputAdornment>}
+                                aria-describedby="outlined-weight-helper-text"
+                                inputProps={{
+                                    'aria-label': 'Age',
+                                }}
+                                placeholder="5"
+                                onChange={handleAge}
+                                value={newInput.age}
+                                type='number'
+                            />
+                            <FormHelperText id="outlined-weight-helper-text">Age</FormHelperText>
                         </FormControl>
                         <br></br>
                         {/* <Button variant="contained">Submit</Button> */}

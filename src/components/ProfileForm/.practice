@@ -1,0 +1,27 @@
+
+
+
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                            <div>
+        
+                         
+                        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
+                            <OutlinedInput
+                                id="3"
+                                type='number'
+                                endAdornment={<InputAdornment position="end">Pounds</InputAdornment>}
+                                aria-describedby="outlined-weight-helper-text"
+                                inputProps={{
+                                    'aria-label': 'weight',
+                                }}
+                                placeholder="165"
+                                onChange={(event) => setWeight(event.target.value)}
+                                value={weight}
+                                
+
+                            />
+                            <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText>
+                        </FormControl>
+
+                            </div>
+                        </Box>

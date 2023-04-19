@@ -30,9 +30,9 @@ router.post('/', (req, res) => {
   // console.log(' in post req.body:', req.body)
   // POST route code here
   const newInputt = req.body;
-  const queryText = `INSERT INTO "info" (gender, height, weight, user_id)
-  VALUES ($1, $2, $3, $4)`;
-  pool.query(queryText, [newInputt.gender, newInputt.height, newInputt.weight, req.user.id])
+  const queryText = `INSERT INTO "info" (gender, height, weight, age, user_id)
+  VALUES ($1, $2, $3, $4, $5)`;
+  pool.query(queryText, [newInputt.gender, newInputt.height, newInputt.weight, newInputt.age, req.user.id])
     .then(() => res.sendStatus(201))
     .catch(error => {
       res.sendStatus(500)
@@ -65,9 +65,9 @@ router.put('/:id', (req, res) => {
   console.log('updatedItem',req.body)
   console.log('id',req.params.id)
 
-  const queryText = `UPDATE info SET "height" = $1 , "weight" = $2 WHERE id=$3`
+  const queryText = `UPDATE info SET "gender" = $1 , "height" = $2 , "weight" = $3 , "age" = $4  WHERE id=$5`
   pool
-  .query(queryText, [updatedItem.height, updatedItem.weight, itemId])
+  .query(queryText, [updatedItem.gender, updatedItem.height, updatedItem.weight, updatedItem.age, itemId])
   .then((result) => {
     res.sendStatus(200);
   
