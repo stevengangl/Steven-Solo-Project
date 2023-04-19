@@ -26,7 +26,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
-function Coma(){
+function ModeratelyActive(){
 
 
 
@@ -94,25 +94,26 @@ function Coma(){
                             //   </Avatar>
                             // }
 
-                            title='COMA'
-                            subheader="In bed all day"
+                            title='Moderately Active'
+                            subheader="
+                            going to the gym regularly "
                         />
                         <CardMedia
         component="img"
         height="194"
-        image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Man_Sleeping_in_Bed_Cartoon_Vector.svg/1024px-Man_Sleeping_in_Bed_Cartoon_Vector.svg.png?20180304135213"
-        alt="Paella dish"
+        image="https://i.pinimg.com/736x/9f/28/9d/9f289ded11ffe80b172480d253b0018f.jpg"
+        alt="Person walking dog"
         style={{ width: '150px', height: '150px' }}
 
       />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                {user.username} would burn {Calculate()} calories in 24 hours 
+                                {user.username} would burn {Calculate() * 1.55} calories in 24 hours 
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                            Click to see how we got these results                          </Typography>
+                            Click to see how we got these results                           </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
@@ -150,4 +151,4 @@ function Coma(){
 
 }
 
-export default Coma;
+export default ModeratelyActive;

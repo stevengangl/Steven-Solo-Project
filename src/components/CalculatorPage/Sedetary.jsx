@@ -95,7 +95,7 @@ function Sedetary(){
                             // }
 
                             title='Sedetary'
-                            subheader="Like an office job"
+                            subheader="Think sitting all day at work"
                         />
                         <CardMedia
         component="img"
@@ -112,9 +112,7 @@ function Sedetary(){
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                            how did we get these results?
-                                 What are the different lifestyles?
-                                 click below to see                            </Typography>
+                            Click to see how we got these results                           </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}

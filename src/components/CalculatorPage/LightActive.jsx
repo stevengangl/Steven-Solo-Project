@@ -26,7 +26,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
-function Coma(){
+function LightlyActive(){
 
 
 
@@ -94,25 +94,25 @@ function Coma(){
                             //   </Avatar>
                             // }
 
-                            title='COMA'
-                            subheader="In bed all day"
+                            title='Lightly Active'
+                            subheader="Light exercise like walking your dog "
                         />
                         <CardMedia
         component="img"
         height="194"
-        image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Man_Sleeping_in_Bed_Cartoon_Vector.svg/1024px-Man_Sleeping_in_Bed_Cartoon_Vector.svg.png?20180304135213"
-        alt="Paella dish"
+        image="https://media.istockphoto.com/id/1385690630/vector/man-walking-dog-on-street-semi-flat-color-vector-characters.jpg?s=612x612&w=0&k=20&c=EYYXmHALerjMUhWoYS5u4AWfHatafIikLp5DZtlTn-M="
+        alt="Person walking dog"
         style={{ width: '150px', height: '150px' }}
 
       />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                {user.username} would burn {Calculate()} calories in 24 hours 
+                                {user.username} would burn {Calculate() * 1.375} calories in 24 hours 
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                            Click to see how we got these results                          </Typography>
+                            Click to see how we got these results                           </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
@@ -150,4 +150,4 @@ function Coma(){
 
 }
 
-export default Coma;
+export default LightlyActive;
