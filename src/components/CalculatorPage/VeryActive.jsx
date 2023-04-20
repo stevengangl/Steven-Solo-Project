@@ -67,7 +67,7 @@ function VeryActive(){
 
             let calories = 66 + weight + height - age
             console.log('male', calories)
-            return calories
+            return Math.round(calories  * 1.725)
         }
         else {
             let weight = info[0].weight * 4.35;
@@ -77,7 +77,7 @@ function VeryActive(){
             let calories = 655 + weight + height - age
             console.log('female', calories)
 
-            return calories
+            return Math.round(calories  * 1.725)
         }
     }
     return (
@@ -107,7 +107,7 @@ function VeryActive(){
       />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                {user.username} would burn {Calculate() * 1.725} calories in 24 hours 
+                                {user.username} would burn {Calculate()} calories in 24 hours 
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>

@@ -26,11 +26,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
+
 function ModeratelyActive(){
 
 
 
-
+//this is for the cards
     const ExpandMore = styled((props) => {
         const { expand, ...other } = props;
         return <IconButton {...other} />;
@@ -58,6 +59,9 @@ function ModeratelyActive(){
         dispatch({ type: "FETCH_PROFILE_INFO" });
     }, []);
 
+
+
+    //this function logic is based on if the user is male or female
     function Calculate() {
         if (info[0].gender === 'Male') {
 
@@ -67,7 +71,7 @@ function ModeratelyActive(){
 
             let calories = 66 + weight + height - age
             console.log('male', calories)
-            return calories
+            return Math.round(calories * 1.55)
         }
         else {
             let weight = info[0].weight * 4.35;
@@ -77,7 +81,7 @@ function ModeratelyActive(){
             let calories = 655 + weight + height - age
             console.log('female', calories)
 
-            return calories
+            return Math.round(calories * 1.55)
         }
     }
     return (
@@ -96,7 +100,7 @@ function ModeratelyActive(){
 
                             title='Moderately Active'
                             subheader="
-                            going to the gym regularly "
+                            Going to the gym 3-5 days per week "
                         />
                         <CardMedia
         component="img"
@@ -108,7 +112,7 @@ function ModeratelyActive(){
       />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                {user.username} would burn {Calculate() * 1.55} calories in 24 hours 
+                                {user.username} would burn {Calculate()} calories in 24 hours 
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>

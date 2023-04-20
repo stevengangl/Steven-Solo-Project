@@ -8,6 +8,7 @@ import Holder from "./Holder";
 import LightlyActive from "./LightActive";
 import ModeratelyActive from "./ModeratelyActive";
 import VeryActive from "./VeryActive";
+import { FilledInput } from "@mui/material";
 
 
 
@@ -17,15 +18,17 @@ function CalculatorPage() {
 
 
     return (
-<div style={{ display: 'flex' }} >
-{/* <Holder /> */}
-<Coma />
-<Sedetary />
-<LightlyActive />
-<ModeratelyActive />
-<VeryActive />
+        <div style={{
+            display: 'flex'
+        }} >
+            {/* <Holder /> */}
+            <Coma />
+            <Sedetary />
+            <LightlyActive />
+            <ModeratelyActive />
+            <VeryActive />
 
-</div>
+        </div>
     );
 
 }

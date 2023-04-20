@@ -67,7 +67,7 @@ function Coma(){
 
             let calories = 66 + weight + height - age
             console.log('male', calories)
-            return calories
+            return Math.round(calories)
         }
         else {
             let weight = info[0].weight * 4.35;
@@ -77,7 +77,7 @@ function Coma(){
             let calories = 655 + weight + height - age
             console.log('female', calories)
 
-            return calories
+            return Math.round(calories)
         }
     }
     return (
@@ -94,7 +94,7 @@ function Coma(){
                             //   </Avatar>
                             // }
 
-                            title='COMA'
+                            title='Sleeping'
                             subheader="In bed all day"
                         />
                         <CardMedia

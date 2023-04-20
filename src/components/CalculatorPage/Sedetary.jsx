@@ -68,7 +68,7 @@ function Sedetary(){
 
             let calories = 66 + weight + height - age
             console.log('male', calories)
-            return calories
+            return Math.round(calories * 1.2)
         }
         else {
             let weight = info[0].weight * 4.35;
@@ -78,7 +78,7 @@ function Sedetary(){
             let calories = 655 + weight + height - age
             console.log('female', calories)
 
-            return calories
+            return Math.round(calories * 1.2) 
         }
     }
     return (
@@ -107,7 +107,7 @@ function Sedetary(){
       />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                {user.username} would burn {Calculate() * 1.2 } calories in 24 hours
+                                {user.username} would burn {Calculate()} calories in 24 hours
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
