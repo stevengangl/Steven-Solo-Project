@@ -15,20 +15,15 @@ function SimulatorPage() {
 
     const sim = useSelector((store) => store.SimulatorPageReducer);
 console.log('this is sim:', sim)
+
+            {/* this is conditionally rendering to showonly the table  */}
+
 if(!sim || !sim[0]) {
-    return <div>Laoding...</div>
+    return <SimulatorForm />
 }
     return (
         <>
-
-
-{/* if (!sim || !sim[0]) {
-        // Render loading HTML or any other placeholder content
-        return <div>Loading...</div>;
-    } */}
-
-
-
+            {/* this is conditionally rendering to show the tables once a user submits data   */}
             <SimulatorForm />
 {sim[0].inputEntered ? <SimulatorTable /> : 'loading' }
             
