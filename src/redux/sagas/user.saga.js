@@ -34,6 +34,8 @@ function* editProfileCreated(action){
   }
 }
 
+
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
   yield takeLatest('CHANGE_PROFILE_CREATED', editProfileCreated);

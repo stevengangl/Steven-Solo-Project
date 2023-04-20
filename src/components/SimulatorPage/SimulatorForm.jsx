@@ -13,8 +13,12 @@ import { useState } from 'react';
 
 function SimulatorForm() {
 
+
+    
+
     const user = useSelector((store) => store.user);
     const info = useSelector((store) => store.info);
+    const sim =useSelector((store) => store.SimulatorPageReducer)
     const dispatch = useDispatch();
 
 
@@ -36,11 +40,15 @@ function SimulatorForm() {
     function handleClick() {
         const weight = weightValue
         const todo = gainOrLose
-        console.log('weight and todo:', weight, todo)
+        console.log('WEIGHT AND TODO:', sim)
 
 
         dispatch({ type: 'POST_WEIGHT_GOAL', payload: {weight, todo}})
-    }
+
+        // dispatch({ type: 'CHANGE_SIMULATOR', payload: sim.id})
+
+    
+    };
 
     return (
         <Box display="flex" padding=" 16px">
