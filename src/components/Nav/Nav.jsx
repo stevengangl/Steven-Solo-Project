@@ -42,6 +42,10 @@ function Nav() {
               Calculator Page
             </Link>
 
+            <Link className="navLink" to="/simulator">
+              Simulator Page
+            </Link>
+
             <LogOutButton className="navLink" />
           </>
         )}

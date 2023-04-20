@@ -7,12 +7,9 @@ import {
 } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
-
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -21,6 +18,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import CalculatorPage from '../CalculatorPage/CalculatorPage';
+import SimulatorPage from '../SimulatorPage/SimulatorPage';
 
 import './App.css';
 
@@ -85,6 +83,14 @@ function App() {
             path="/calculator"
           >
             <CalculatorPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // ⭐️ logged in shows calculator page
+            exact
+            path="/simulator"
+          >
+            <SimulatorPage />
           </ProtectedRoute>
 
           <Route
