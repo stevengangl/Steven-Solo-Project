@@ -77,7 +77,7 @@ function ProfileForm(){
 
     return (
         <>
-            <h2>Enter your info</h2>
+            <h2>Enter your info here</h2>
 
 
         
