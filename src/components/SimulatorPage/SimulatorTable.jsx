@@ -46,10 +46,36 @@ function SimulatorTable() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({ type: "FETCH_SIMULATOR_INFO" });
+        dispatch({ type: "FETCH_SIMULATOR_INFO" }),
+        dispatch({ type: "FETCH_PROFILE_INFO" });
     }, []);
     const user = useSelector((store) => store.user);
     const sim = useSelector((store) => store.SimulatorPageReducer);
+    const info = useSelector((store) => store.ProfilePageReducer);
+
+
+    function Calculate() {
+        if (info[0].gender === 'Male') {
+
+            let weight = info[0].weight * 6.23;
+            let height = info[0].height * 12.7;
+            let age = info[0].age * 6.8;
+
+            let calories = 66 + weight + height - age
+            // console.log('male', calories)
+            return Math.round(calories)
+        }
+        else {
+            let weight = info[0].weight * 4.35;
+            let height = info[0].height * 4.7;
+            let age = info[0].age * 4.7;
+
+            let calories = 655 + weight + height - age
+            // console.log('female', calories)
+
+            return Math.round(calories)
+        }
+    }
 
     // const goal = sim[0].todo
     // const calorieTotal = sim[0].weight * 3500
@@ -88,7 +114,7 @@ function SimulatorTable() {
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                                Calorie to target per day
+                                Calorie to target per day{Calculate()}
                                 
                             </Typography>
                             <ExpandMore

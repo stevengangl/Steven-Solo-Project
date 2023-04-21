@@ -11,7 +11,7 @@ function ProfilePage() {
     return (
         <>
             
-
+{/*⭐️ need to figure out why conditionaly rendering doesnt shopw the form if i delete it⭐️ */}
         {user.profile_created ? <ProfileTable /> : <ProfileForm />}
 
             
