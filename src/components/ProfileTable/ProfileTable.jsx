@@ -38,14 +38,24 @@ function ProfileTable() {
   const [weight, setWeight] = useState('')
   const [height, setHeight] = useState('')
   const [age, setAge] = useState('')
-
-
   const [idToEdit, setIdToEdit] = useState('')
 
   const handleGender = (event) => {
-    const selectedGender = parseInt(event.target.value) === 1 ? 'Male' : 'Female';
+    // const selectedGender = parseInt(event.target.value) === 1 ? 'Male' : 'Female';
+    // setGender(selectedGender);
+    const selectedValue = parseInt(event.target.value);
+    let selectedGender;
+    
+    if (selectedValue === 1) {
+      selectedGender = 'Male';
+    } else if (selectedValue === 2) {
+      selectedGender = 'Female';
+    } else {
+      selectedGender = 'Non-Binary';
+    }
+    
     setGender(selectedGender);
-}
+  }
 
   function addInputField(item) {
     console.log('hello', item.id, item.gender)
@@ -170,16 +180,18 @@ function ProfileTable() {
                       </FormControl>
 
                       <FormControl>
-                            <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-                            <RadioGroup
-                                aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue="female"
-                                name="radio-buttons-group"
-                            >
-                                <FormControlLabel value="1" onChange={handleGender} control={<Radio />} label="Male" />
-                                <FormControlLabel value="2" onChange={handleGender} control={<Radio />} label="Female" />
-                            </RadioGroup>
-                        </FormControl>
+                        <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+                        <RadioGroup
+                          aria-labelledby="demo-radio-buttons-group-label"
+                          defaultValue="female"
+                          name="radio-buttons-group"
+                        >
+                          <FormControlLabel value="1" onChange={handleGender} control={<Radio />} label="Male" />
+                          <FormControlLabel value="2" onChange={handleGender} control={<Radio />} label="Female" />
+                          <FormControlLabel value="3" onChange={handleGender} control={<Radio />} label="Non-Binary" />
+
+                        </RadioGroup>
+                      </FormControl>
 
                     </div>
 

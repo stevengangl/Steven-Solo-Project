@@ -10,7 +10,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   // console.log(' in get req.body:', req.body)
 
   pool
-  .query(`SELECT * FROM "info" ORDER BY id`)
+  .query(`SELECT * FROM "info"  ORDER BY id`)
   .then((result) => {
     // console.log(' in get req.body:', result.rows)
 
@@ -26,7 +26,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 /**
  * POST route template
  */
-router.post('/', (req, res) => {
+router.post('/',rejectUnauthenticated, (req, res) => {
   // console.log(' in post req.body:', req.body)
   // POST route code here
   const newInputt = req.body;

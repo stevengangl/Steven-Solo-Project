@@ -114,7 +114,8 @@ function SimulatorTable() {
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                                Calorie to target per day{Calculate()}
+                                Calorie to target per day...
+                                NEED{Calculate()}
                                 
                             </Typography>
                             <ExpandMore

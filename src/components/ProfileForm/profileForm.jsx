@@ -21,7 +21,7 @@ function ProfileForm(){
     const user = useSelector((store) => store.user);
 
     let [newInput, setNewInput] = useState({ feet: '', inches: '', weight: 0, age:0 })
-    let [gender, setGender] = useState(true)
+    let [gender, setGender] = useState('')
 
     //These handlers set the state to equal the input fields
     const handleFeet = (event) => {
@@ -43,10 +43,26 @@ function ProfileForm(){
 
     //this handlers toggles between true or false depending on what is choosed
     //male = true female = false
+    
+    // const handleGender = (event) => {
+    //     const selectedGender = parseInt(event.target.value) === 1 ? true : false;
+    //     setGender(selectedGender);
+    // }
+
     const handleGender = (event) => {
-        const selectedGender = parseInt(event.target.value) === 1 ? true : false;
+        const selectedValue = parseInt(event.target.value);
+        let selectedGender;
+        
+        if (selectedValue === 1) {
+          selectedGender = 'Male';
+        } else if (selectedValue === 2) {
+          selectedGender = 'Female';
+        } else {
+          selectedGender = 'Non-Binary';
+        }
+        
         setGender(selectedGender);
-    }
+      }
 
     function handleClick(){
         alert('Success! Go home to see Results')
@@ -58,11 +74,11 @@ function ProfileForm(){
         const height = (newInput.feet) * 12 + parseInt(newInput.inches);
                 console.log('total inches:', height, 'weight:', Number(newInput.weight), gender, newInput.age);
 
-       if(gender){
-        gender = 'male'
-       }else{
-        gender = 'female'
-       }
+    //    if(gender){
+    //     gender = 'male'
+    //    }else{
+    //     gender = 'female'
+    //    }
 
 
         console.log('total inches:', height, 'weight:', Number(newInput.weight), gender, newInput.age);
@@ -145,11 +161,13 @@ function ProfileForm(){
                             <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
                             <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue="female"
+                                defaultValue="Female"
                                 name="radio-buttons-group"
                             >
                                 <FormControlLabel value="1" onChange={handleGender} control={<Radio />} label="Male" />
                                 <FormControlLabel value="2" onChange={handleGender} control={<Radio />} label="Female" />
+                                <FormControlLabel value="3" onChange={handleGender} control={<Radio />} label="Non-Binary" />
+
                             </RadioGroup>
                         </FormControl>
 
