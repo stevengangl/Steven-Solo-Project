@@ -8,8 +8,10 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
     // GET route code here
+    const queryText = `SELECT * FROM "simulator"  WHERE user_id = $1 ;`
+    const queryValues = [req.user.id]
     pool
-        .query(`SELECT * FROM "simulator" ORDER BY id`)
+        .query(queryText, queryValues)
         .then((result) => {
             // console.log(' in get req.body:', result.rows)
 
@@ -27,9 +29,10 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 router.post('/', (req, res) => {
     // console.log('at start of post router', req.body)
     const newInput = req.body;
-    const queryText = `INSERT INTO "simulator" (weight, todo, "inputEntered")
-    VALUES ($1, $2, true)`;
-    pool.query(queryText, [newInput.weight, newInput.todo])
+    const queryText = `INSERT INTO "simulator" (weight, todo, "inputEntered", "user_id")
+    VALUES ($1, $2, true, $3)`;
+    const queryValues = [ newInput.weight, newInput.todo, req.user.id]
+    pool.query(queryText, queryValues)
         .then(() => res.sendStatus(201))
         .catch(error => {
             console.log('error in post', error)

@@ -116,13 +116,13 @@ function ProfileTable() {
 
                 {/* <TableCell align="right">{item.user_id} inches</TableCell> */}
 
-                <TableCell align="right">
+                {/* <TableCell align="right">
                   <button onClick={() => {
                     console.log('item.id:', item.id);
                     dispatch({ type: 'DELETE_ITEM', payload: item.id })
                   }}>Delete Me</button>
 
-                </TableCell>
+                </TableCell> */}
 
                 {idToEdit === item.id ? <div>
 
