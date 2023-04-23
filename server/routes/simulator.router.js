@@ -56,4 +56,18 @@ router.post('/', (req, res) => {
 
 // });
 
+router.delete('/:id', (req, res) => {
+    // endpoint functionality
+    // console.log('dlete route',req.params.id)
+    const idToDelete = req.params.id;
+    // console.log('req.params.id:', idToDelete);
+    const queryText = `DELETE FROM "simulator" WHERE id=$1`;
+    pool.query(queryText, [idToDelete])
+      .then(() => res.sendStatus(200))
+      .catch(error => {
+        console.log('Error in router:', error);
+        res.sendStatus(500);
+      })
+  });
+
 module.exports = router;

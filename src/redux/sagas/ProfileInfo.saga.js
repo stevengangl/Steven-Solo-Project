@@ -35,10 +35,23 @@ function* editShelf(action){
         console.log(error)
     }}
 
+    function* postItem(action) {
+        // console.log('inside postinfo saga',action.payload)
+        try {
+            yield axios.post('/api/profile', action.payload)
+            console.log('in post info',action.payload)
+            yield put({type: 'FETCH_PROFILE_INFO'})
+        }catch(error){
+            console.log('error', error)
+        }
+    }
+
 function* ProfileInfoSaga() {
     yield takeLatest('FETCH_PROFILE_INFO', fetchProfileInfo)
     yield takeLatest('DELETE_ITEM', deleteItem);
     yield takeLatest('EDIT_SHELF_ITEM', editShelf)
+    yield takeLatest('POST_INFO', postItem)
+
 
 }
 

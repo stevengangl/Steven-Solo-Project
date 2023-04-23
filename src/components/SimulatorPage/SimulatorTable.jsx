@@ -23,6 +23,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import ThreeDRotation from '@mui/icons-material/ThreeDRotation';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 function SimulatorTable() {
 
@@ -47,7 +51,7 @@ function SimulatorTable() {
 
     useEffect(() => {
         dispatch({ type: "FETCH_SIMULATOR_INFO" }),
-        dispatch({ type: "FETCH_PROFILE_INFO" });
+            dispatch({ type: "FETCH_PROFILE_INFO" });
     }, []);
     const user = useSelector((store) => store.user);
     const sim = useSelector((store) => store.SimulatorPageReducer);
@@ -55,26 +59,33 @@ function SimulatorTable() {
 
 
     function Calculate() {
-        if (info[0].gender === 'Male') {
+        let calories; // shared variable
 
-            let weight = info[0].weight * 6.23;
-            let height = info[0].height * 12.7;
-            let age = info[0].age * 6.8;
+        if (info.length) {
+            if (info[0].gender === 'Male') {
+                let weight = info[0].weight * 6.23;
+                let height = info[0].height * 12.7;
+                let age = info[0].age * 6.8;
 
-            let calories = 66 + weight + height - age
-            // console.log('male', calories)
-            return Math.round(calories)
+                calories = 66 + weight + height - age;
+            } else {
+                let weight = info[0].weight * 4.35;
+                let height = info[0].height * 4.7;
+                let age = info[0].age * 4.7;
+
+                calories = 655 + weight + height - age;
+            }
         }
-        else {
-            let weight = info[0].weight * 4.35;
-            let height = info[0].height * 4.7;
-            let age = info[0].age * 4.7;
 
-            let calories = 655 + weight + height - age
-            // console.log('female', calories)
+        // this gets the data and retunes with a 1 second delay which fixes timing issue
+        setTimeout(() => {
+            console.log('Calories:', Math.round(calories));
+            return Math.round(calories);
+        }, 1000);
+    }
 
-            return Math.round(calories)
-        }
+    function deleteButton() {
+        console.log('hola')
     }
 
     // const goal = sim[0].todo
@@ -104,20 +115,26 @@ function SimulatorTable() {
                         maxWidth: 500, maxHeight: 1500,
                     }}>
                         <CardHeader
-                            title={item.todo +' '+ item.weight + 'lbs'}
+                            title={item.todo + ' ' + item.weight + 'lbs'}
                             subheader={item.weight + 'lbs'}
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                Days: {item.weight * 3500 / 500} 
+                                Days: {item.weight * 3500 / 500}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
                                 Calorie to target per day...
                                 NEED{Calculate()}
-                                
+
                             </Typography>
+                            <IconButton aria-label="">
+                                <DeleteIcon onClick={() => {
+                                    console.log('item.id:', item.id);
+                                    dispatch({ type: 'DELETE_SIM_ITEM', payload: item.id })
+                                }} />
+                            </IconButton>
                             <ExpandMore
                                 expand={expanded}
                                 onClick={handleExpandClick}
@@ -130,7 +147,7 @@ function SimulatorTable() {
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
                                 <Typography paragraph>i can change this:</Typography>
-                               
+
                             </CardContent>
                         </Collapse>
                     </Card>

@@ -37,11 +37,25 @@ function* getSim() {
 //     }
 //   }
 
+function* deleteSimItem(action) {
+    console.log('delete saga', action)
+    try {
+        yield axios.delete(`/api/simulator/${action.payload}`);
+
+        yield put({type: 'FETCH_SIMULATOR_INFO'})
+        
+    }catch (error) {
+        console.log('Error:');
+
+    }
+}
 
 function* simSaga(){//this is what talks to root saga
     yield takeLatest('POST_WEIGHT_GOAL', postSim)
     yield takeLatest('FETCH_SIMULATOR_INFO', getSim)
     // yield takeLatest('CHANGE_SIMULATOR', editSimData);
+    yield takeLatest('DELETE_SIM_ITEM', deleteSimItem);
+
 
 
 }

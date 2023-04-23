@@ -18,7 +18,7 @@ export default function* rootSaga() {
     loginSaga(), // login saga is now registered
     registrationSaga(),
     userSaga(),
-    postSaga(),
+    // postSaga(),
     ProfileInfoSaga(),
     simSaga()
     
