@@ -19,7 +19,7 @@ function CalculatorPage() {
 
     return (
         <div style={{
-            display: 'flex'
+            display: 'flex', flexDirection: 'column', flexWrap: 'wrap'
         }} >
             {/* <Holder /> */}
             <Coma />

@@ -83,10 +83,13 @@ function Sedetary(){
     }
     return (
         <>
+
+
             {info.length ? (
                 <>
 
-                    <Card sx={{ maxWidth: 275, maxHeight: 1500 }}>
+                    <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: 'blue', border: '1px solid #000',
+                        padding: '25px', margin: '2px'}}>
                         <CardHeader
                             // avatar={
                             //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -95,18 +98,18 @@ function Sedetary(){
                             // }
 
                             title='Sedetary'
-                            subheader="Think sitting all day at work"
+                            subheader="Sitting all day, minimal movements"
                         />
                         <CardMedia
         component="img"
         height="194"
-        image="https://i.pinimg.com/originals/db/ae/1e/dbae1e5e769ef7c68fbf2c8681486a77.jpg"
+        image="https://www.shutterstock.com/image-vector/boy-addicted-playing-video-games-260nw-59228794.jpg"
         alt="Paella dish"
-        style={{ width: '150px', height: '150px' }}
+        style={{ width: '350px', height: '250px' }}
 
       />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" fontSize='18px'>
                                 {user.username} would burn {Calculate()} calories in 24 hours
                             </Typography>
                         </CardContent>

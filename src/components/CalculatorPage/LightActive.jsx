@@ -86,7 +86,8 @@ function LightlyActive(){
             {info.length ? (
                 <>
 
-                    <Card sx={{ maxWidth: 275, maxHeight: 1500 }}>
+                    <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: 'lightgrey', border: '1px solid #000',
+                        padding: '25px', margin: '2px' }}>
                         <CardHeader
                             // avatar={
                             //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -95,18 +96,19 @@ function LightlyActive(){
                             // }
 
                             title='Lightly Active'
-                            subheader="Light exercise like walking your dog "
+                            subheader="daily life, running errands going to work "
                         />
                         <CardMedia
         component="img"
         height="194"
-        image="https://media.istockphoto.com/id/1385690630/vector/man-walking-dog-on-street-semi-flat-color-vector-characters.jpg?s=612x612&w=0&k=20&c=EYYXmHALerjMUhWoYS5u4AWfHatafIikLp5DZtlTn-M="
+        image='https://t3.ftcdn.net/jpg/05/78/11/00/240_F_578110095_gR0zZjvJDN8pm71KHKxxAxQ6O2ZZ5Sj6.jpg'
+        // image="https://media.istockphoto.com/id/1385690630/vector/man-walking-dog-on-street-semi-flat-color-vector-characters.jpg?s=612x612&w=0&k=20&c=EYYXmHALerjMUhWoYS5u4AWfHatafIikLp5DZtlTn-M="
         alt="Person walking dog"
-        style={{ width: '150px', height: '150px' }}
+        style={{ width: '350px', height: '250px' }}
 
       />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" fontSize='18px'>
                                 {user.username} would burn {Calculate()} calories in 24 hours 
                             </Typography>
                         </CardContent>

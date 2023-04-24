@@ -90,7 +90,8 @@ function ModeratelyActive(){
             {info.length ? (
                 <>
 
-                    <Card sx={{ maxWidth: 275, maxHeight: 1500 }}>
+                    <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: 'grey', border: '1px solid #000',
+                        padding: '25px', margin: '2px' }}>
                         <CardHeader
                             // avatar={
                             //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -99,19 +100,21 @@ function ModeratelyActive(){
                             // }
 
                             title='Moderately Active'
-                            subheader="
-                            Going to the gym 3-5 days per week "
+                            subheader=" Going for a walk after work everyday,
+                             "
                         />
                         <CardMedia
         component="img"
         height="194"
-        image="https://i.pinimg.com/736x/9f/28/9d/9f289ded11ffe80b172480d253b0018f.jpg"
+        // image="https://i.pinimg.com/736x/9f/28/9d/9f289ded11ffe80b172480d253b0018f.jpg"
+                image="https://media.istockphoto.com/id/1385690630/vector/man-walking-dog-on-street-semi-flat-color-vector-characters.jpg?s=612x612&w=0&k=20&c=EYYXmHALerjMUhWoYS5u4AWfHatafIikLp5DZtlTn-M="
+
         alt="Person walking dog"
-        style={{ width: '150px', height: '150px' }}
+        style={{ width: '350px', height: '250px' }}
 
       />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" fontSize='18px'>
                                 {user.username} would burn {Calculate()} calories in 24 hours 
                             </Typography>
                         </CardContent>

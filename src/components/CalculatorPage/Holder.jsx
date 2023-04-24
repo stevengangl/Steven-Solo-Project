@@ -105,7 +105,8 @@ function Holder(){
 
 
 
-                    <Card sx={{ maxWidth: 275, maxHeight: 1500 }}>
+                    <Card sx={{ maxWidth: 400, maxHeight: 1500, backgroundColor: 'lightblue', border: '1px solid #000',
+                        padding: '25px', margin: '2px' }}>
                         <CardHeader
                             // avatar={
                             //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

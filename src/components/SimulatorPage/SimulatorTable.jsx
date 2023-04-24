@@ -124,21 +124,22 @@ function SimulatorTable() {
 
                             </Typography>
                         </CardContent>
-                        <CardActions disableSpacing>
-                            <Typography variant="body2" color="text.secondary">
-                                click here for more options
-
-                            </Typography>
-                            <IconButton aria-label="" sx={{
+                        <IconButton aria-label="" sx={{
                                 position: 'relative',
-                                top: '30px',
-                                left: '140px',
+                                top: '0px',
+                                left: '0px',
                             }} >
                                 <DeleteIcon onClick={() => {
                                     console.log('item.id:', item.id);
                                     dispatch({ type: 'DELETE_SIM_ITEM', payload: item.id })
                                 }} />
                             </IconButton >
+                        <CardActions disableSpacing>
+                            <Typography variant="body2" color="text.secondary">
+                                click here for more options
+
+                            </Typography>
+                  
                             <ExpandMore
                                 expand={expanded}
                                 onClick={handleExpandClick}

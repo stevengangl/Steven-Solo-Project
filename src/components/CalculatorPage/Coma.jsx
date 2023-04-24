@@ -82,11 +82,14 @@ function Coma(){
     }
     return (
         <>
+        <h1> {user.username} Results </h1>
+  
 
             {info.length ? (
                 <>
 
-                    <Card sx={{ maxWidth: 275, maxHeight: 1500 }}>
+                    <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: 'lightblue', border: '1px solid #000',
+                        padding: '25px', margin: '2px' }}>
                         <CardHeader
                             // avatar={
                             //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -99,14 +102,14 @@ function Coma(){
                         />
                         <CardMedia
         component="img"
-        height="194"
+        height="250"
         image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Man_Sleeping_in_Bed_Cartoon_Vector.svg/1024px-Man_Sleeping_in_Bed_Cartoon_Vector.svg.png?20180304135213"
         alt="Paella dish"
-        style={{ width: '150px', height: '150px' }}
+        style={{ width: '350px', height: '250px' }}
 
       />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" fontSize='18px'>
                                 {user.username} would burn {Calculate()} calories in 24 hours 
                             </Typography>
                         </CardContent>
