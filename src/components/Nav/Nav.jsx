@@ -81,6 +81,9 @@ function Nav() {
     setOpen(false);
   };
 
+  const handleLinkClick = () => {
+    handleDrawerClose();
+  };
   return (
     <div className="nav">
       {/* <Link to="/home">
@@ -135,27 +138,27 @@ function Nav() {
             <Divider />
             {user.id && (
               <>
-                <Link className="navLink" to="/user">
+                <Link className="navLink" to="/user" onClick={handleLinkClick}>
                   Home
                 </Link>
 
-                <Link className="navLink" to="/info">
+                <Link className="navLink" to="/info" onClick={handleLinkClick}>
                   Info Page
                 </Link>
 
-                <Link className="navLink" to="/profile">
+                <Link className="navLink" to="/profile" onClick={handleLinkClick}>
                   Profile Page
                 </Link>
 
-                <Link className="navLink" to="/calculator">
+                <Link className="navLink" to="/calculator" onClick={handleLinkClick}>
                   Calculator Page
                 </Link>
 
-                <Link className="navLink" to="/simulator">
+                <Link className="navLink" to="/simulator" onClick={handleLinkClick}>
                   Simulator Page
                 </Link>
 
-                <LogOutButton className="navLink" />
+                <LogOutButton className="navLink" onClick={handleLinkClick} />
               </>
             )}
             <Divider />
