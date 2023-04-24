@@ -3,10 +3,10 @@ import axios from 'axios';
 
 
 function* postSim(action) {
-    console.log('in post sim',action.payload)
+    // console.log('in post sim',action.payload)
     try {
         yield axios.post('/api/simulator', action.payload)
-        console.log('in post info',action.payload)
+        // console.log('in post info',action.payload)
         yield put({type: 'FETCH_SIMULATOR_INFO'})
     }catch(error){
         console.log('error', error)
@@ -18,7 +18,7 @@ function* getSim() {
 
     try {
         const response = yield axios.get('/api/simulator')
-        console.log('get sim GET', response.data)
+        // console.log('get sim GET', response.data)
 
         yield put({ type: 'SET_SIMULATOR_PAGE', payload: response.data })
     } catch (error) {
@@ -38,7 +38,7 @@ function* getSim() {
 //   }
 
 function* deleteSimItem(action) {
-    console.log('delete saga', action)
+    // console.log('delete saga', action)
     try {
         yield axios.delete(`/api/simulator/${action.payload}`);
 

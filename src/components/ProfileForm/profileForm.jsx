@@ -41,13 +41,7 @@ function ProfileForm(){
 
     };
 
-    //this handlers toggles between true or false depending on what is choosed
-    //male = true female = false
-    
-    // const handleGender = (event) => {
-    //     const selectedGender = parseInt(event.target.value) === 1 ? true : false;
-    //     setGender(selectedGender);
-    // }
+
 
     const handleGender = (event) => {
         const selectedValue = parseInt(event.target.value);
@@ -72,16 +66,11 @@ function ProfileForm(){
     const addNewInput = event => {
         event.preventDefault();
         const height = (newInput.feet) * 12 + parseInt(newInput.inches);
-                console.log('total inches:', height, 'weight:', Number(newInput.weight), gender, newInput.age);
-
-    //    if(gender){
-    //     gender = 'male'
-    //    }else{
-    //     gender = 'female'
-    //    }
+                // console.log('total inches:', height, 'weight:', Number(newInput.weight), gender, newInput.age);
 
 
-        console.log('total inches:', height, 'weight:', Number(newInput.weight), gender, newInput.age);
+
+        // console.log('total inches:', height, 'weight:', Number(newInput.weight), gender, newInput.age);
         dispatch({ 
             type: 'POST_INFO',
              payload: {  height, weight: Number(newInput.weight), gender, age: Number(newInput.age)

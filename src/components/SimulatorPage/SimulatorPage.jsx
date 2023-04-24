@@ -14,7 +14,7 @@ function SimulatorPage() {
     }, []);
 
     const sim = useSelector((store) => store.SimulatorPageReducer);
-console.log('this is sim:', sim)
+// console.log('this is sim:', sim)
 
             {/* this is conditionally rendering to showonly the table  */}
 

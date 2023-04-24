@@ -5,7 +5,7 @@ function* fetchProfileInfo() {
 
     try {
         const response = yield axios.get('/api/profile')
-        console.log('SEND TO PROFILEPAGE REDUCER', response.data)
+        // console.log('SEND TO PROFILEPAGE REDUCER', response.data)
 
         yield put({ type: 'SET_PROFILE_PAGE', payload: response.data })
     } catch (error) {
@@ -13,7 +13,7 @@ function* fetchProfileInfo() {
     }
 }
 function* deleteItem(action) {
-    console.log('hello', action)
+    // console.log('hello', action)
     try {
         yield axios.delete(`/api/profile/${action.payload}`);
 
@@ -26,7 +26,7 @@ function* deleteItem(action) {
 }
 
 function* editShelf(action){
-    console.log('hello', action.payload)
+    // console.log('hello', action.payload)
 
     try{
         yield axios.put(`/api/profile/${action.payload.id}`, action.payload)

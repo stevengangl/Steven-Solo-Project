@@ -29,18 +29,18 @@ function SimulatorForm() {
     //this gets the value of the weight you want to gain or lose
     function valuetext(weightValue) {
         setWeightValue(weightValue)
-        console.log('value', weightValue)
+        // console.log('value', weightValue)
     }
     //this sets the gain or loose state to gain or lose
     const handleChange = (event) => {
         setGainOrLose(event.target.value);
-        console.log('gain or lose?:', gainOrLose)
+        // console.log('gain or lose?:', gainOrLose)
     };
 
     function handleClick() {
         const weight = weightValue
         const todo = gainOrLose
-        console.log('WEIGHT AND TODO:', sim)
+        // console.log('WEIGHT AND TODO:', sim)
 
 
         dispatch({ type: 'POST_WEIGHT_GOAL', payload: {weight, todo}})
@@ -63,8 +63,8 @@ function SimulatorForm() {
                         defaultValue="female"
                         name="radio-buttons-group"
                     >
-                        <FormControlLabel value="gain" onChange={handleChange} control={<Radio />} label="Gain" />
-                        <FormControlLabel value="lose" onChange={handleChange} control={<Radio />} label="Loose" />
+                        <FormControlLabel value="Gain" onChange={handleChange} control={<Radio />} label="Gain" />
+                        <FormControlLabel value="Lose" onChange={handleChange} control={<Radio />} label="Loose" />
                     </RadioGroup>
                     <Box sx={{ mt: 2 }}>
                         <Slider

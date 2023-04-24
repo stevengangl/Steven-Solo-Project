@@ -60,6 +60,7 @@ function SimulatorTable() {
 
     function Calculate() {
         let calories; // shared variable
+        console.log('sim', sim[0].todo)
 
         if (info.length) {
             if (info[0].gender === 'Male') {
@@ -68,14 +69,20 @@ function SimulatorTable() {
                 let age = info[0].age * 6.8;
 
                 calories = 66 + weight + height - age;
+                return Math.round(calories);
             } else {
                 let weight = info[0].weight * 4.35;
                 let height = info[0].height * 4.7;
                 let age = info[0].age * 4.7;
 
+
                 calories = 655 + weight + height - age;
+                return Math.round(calories);
+
             }
         }
+
+
 
         // this gets the data and retunes with a 1 second delay which fixes timing issue
         setTimeout(() => {
@@ -84,21 +91,28 @@ function SimulatorTable() {
         }, 1000);
     }
 
-    function deleteButton() {
-        console.log('hola')
+    function whatToDo() {
+        let objective = 'hi'; // default value
+        
+        sim.map(item => {
+            if (item.todo == 'Gain') {
+                objective = 'Surplus'; // update the value
+                console.log('objective:', objective);
+            } else {
+                objective = 'deficit'; // update the value for the else block
+                console.log('ELSE objective:', objective);
+            }
+            console.log('ELSE:', objective);
+        });
+        
+        return objective;
     }
-
-    // const goal = sim[0].todo
-    // const calorieTotal = sim[0].weight * 3500
-    // const newWeight = sim[0].weight + 'lbs'
-    // const weight = newWeight
+    
 
 
-    // const timeToAccomplish = calorieTotal / 500
-    // const days = timeToAccomplish + ' days'
-    // const days = calorieTotal * 7
-    // const pound = 3500
-    // const dailyLoss = 500;
+
+
+
 
 
     if (!sim || !sim.length) {
@@ -115,18 +129,25 @@ function SimulatorTable() {
                         maxWidth: 500, maxHeight: 1500,
                     }}>
                         <CardHeader
-                            title={item.todo + ' ' + item.weight + 'lbs'}
-                            subheader={item.weight + 'lbs'}
+
+                            title={'Goal: ' + item.todo + ' ' + item.weight + 'lbs'}
+                            subheader={'daily calories ' + Calculate()}
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
-                                Days: {item.weight * 3500 / 500}
+
+                                Average weight {item.todo} (based on 500 {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} )
+                                <br />
+
+                                This is based on a 500 calorie per day ?
+                                <br />
+                                Days to goal with  500 calorie ?: {item.weight * 3500 / 500}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
                                 Calorie to target per day...
-                                NEED{Calculate()}
+                                NEED {(Calculate() + (item.todo === 'Gain' ? 500 : -500))}
 
                             </Typography>
                             <IconButton aria-label="">
