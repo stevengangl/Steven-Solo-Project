@@ -23,6 +23,7 @@ import FormLabel from '@mui/material/FormLabel';
 import { number } from 'prop-types';
 
 
+
 function ProfileTable() {
   const user = useSelector((store) => store.user);
 
@@ -41,8 +42,7 @@ function ProfileTable() {
   const [idToEdit, setIdToEdit] = useState('')
 
   const handleGender = (event) => {
-    // const selectedGender = parseInt(event.target.value) === 1 ? 'Male' : 'Female';
-    // setGender(selectedGender);
+
     const selectedValue = parseInt(event.target.value);
     let selectedGender;
     
@@ -86,8 +86,8 @@ function ProfileTable() {
 
 
   return (
-    <>
-
+    <div style="display: flex; ">
+          <h1>profile</h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 150 }} aria-label="simple table">
           <TableHead>
@@ -114,20 +114,12 @@ function ProfileTable() {
                 <TableCell align="right">{item.height} inches</TableCell>
                 <TableCell align="right">{item.age} </TableCell>
 
-                {/* <TableCell align="right">{item.user_id} inches</TableCell> */}
+      
 
-                {/* <TableCell align="right">
-                  <button onClick={() => {
-                    console.log('item.id:', item.id);
-                    dispatch({ type: 'DELETE_ITEM', payload: item.id })
-                  }}>Delete Me</button>
+                {idToEdit === item.id  ? <div style="display: flex; flex-direction: row; align-items: center; margin-top: 1rem;" >
 
-                </TableCell> */}
-
-                {idToEdit === item.id ? <div>
-
-
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+<br />
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                     <div>
 
 
@@ -212,11 +204,12 @@ function ProfileTable() {
             ))) : ('loading')
             }
           </TableBody>
+          
         </Table>
       </TableContainer >
 
 
-    </>
+    </div>
   );
 }
 
