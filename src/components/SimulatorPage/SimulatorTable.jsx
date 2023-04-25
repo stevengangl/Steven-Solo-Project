@@ -1,29 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
-import ThreeDRotation from '@mui/icons-material/ThreeDRotation';
 import DeleteIcon from '@mui/icons-material/Delete';
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -65,7 +50,7 @@ function SimulatorTable() {
 
     function Calculate() {
         let calories; // shared variable
-        // console.log('sim', sim[0].todo)
+        // console.log('sim', )
 
         if (info.length) {
             if (info[0].gender === 'Male') {
@@ -120,7 +105,7 @@ function SimulatorTable() {
 
     return (
         <>
-            <h2>add button to choose fitness level?</h2>
+            <h2>{sim.active}</h2>
             <h2>or show every fitness level in card?</h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
@@ -133,17 +118,36 @@ function SimulatorTable() {
                         <CardHeader
 
                             title={'Goal: ' + item.todo + ' ' + item.weight + 'lbs'}
-                            subheader={user.username + ' daily calories ' + Calculate()}
+                            subheader={user.username + 's' + ' daily burned calories ' + Math.round(Calculate() * item.active)}
                         />
                         <CardContent>
                             <Typography variant="body2" color="#" fontSize='18px'>
-                                Approach: Moderate
+                                Activity Level: {
+                                    (() => {
+                                        switch (item.active) {
+                                            case 1:
+                                                return 'Sleeping';
+                                            case 1.2:
+                                                return 'Sedetary';
+                                            case 1.375:
+                                                return 'Light';
+                                            case 1.55:
+                                                return 'Moderate';
+                                            case 1.725:
+                                                return 'Active';
+                                            default:
+                                                return 'Unknown';
+                                        }
+                                    })()
+                                }
                                 <br />
-                                Days: {item.weight * 3500 / 500}
+                                Days to accomplish: {item.weight * 3500 / 500}
                                 <br />
                                 Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 500
                                 <br />
-                                Daily Calories needed: {(Calculate() + (item.todo === 'Gain' ? 500 : -500))}
+                                Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 500 : -500)))}
+                                <br />
+                                active level: {item.active}
                                 <br />
 
                             </Typography>
@@ -175,13 +179,13 @@ function SimulatorTable() {
                                         <Typography id="modal-modal-title" variant="h6" component="h2">
                                             <CardContent>
                                                 <Typography variant="body2" color="#008000" fontSize='18px'>
-                                                    Approach: Moderate
+                                                    Approach: Easy
                                                     <br />
-                                                    Days: {item.weight * 3500 / 500}
+                                                    Days: {item.weight * 3500 / 250}
                                                     <br />
-                                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 500
+                                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250
                                                     <br />
-                                                    Daily Calories needed: {(Calculate() + (item.todo === 'Gain' ? 500 : -500))}
+                                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
                                                     <br />
 
                                                 </Typography>
@@ -193,7 +197,7 @@ function SimulatorTable() {
                                                     <br />
                                                     Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
                                                     <br />
-                                                    Daily Calories needed: {(Calculate() + (item.todo === 'Gain' ? 1000 : -1000))}
+                                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
                                                     <br />
 
                                                 </Typography>
