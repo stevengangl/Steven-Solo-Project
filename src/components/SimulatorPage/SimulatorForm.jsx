@@ -10,20 +10,26 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+
 
 function SimulatorForm() {
 
 
-    
+
 
     const user = useSelector((store) => store.user);
     const info = useSelector((store) => store.info);
-    const sim =useSelector((store) => store.SimulatorPageReducer)
+    const sim = useSelector((store) => store.SimulatorPageReducer)
     const dispatch = useDispatch();
 
 
     const [weightValue, setWeightValue] = useState('');
-    const [gainOrLose, setGainOrLose] = useState('')
+    const [gainOrLose, setGainOrLose] = useState('');
+    //state to store type of activity level, need to send in post
+    const [activityLevel, setActivityLevel] = useState('');
 
 
     //this gets the value of the weight you want to gain or lose
@@ -37,17 +43,21 @@ function SimulatorForm() {
         // console.log('gain or lose?:', gainOrLose)
     };
 
+    const handleActivityLevel = (event) => {
+        setActivityLevel(event.target.value);
+        // console.log('gain or lose?:', gainOrLose)
+    };
     function handleClick() {
         const weight = weightValue
         const todo = gainOrLose
         // console.log('WEIGHT AND TODO:', sim)
 
 
-        dispatch({ type: 'POST_WEIGHT_GOAL', payload: {weight, todo}})
+        dispatch({ type: 'POST_WEIGHT_GOAL', payload: { weight, todo } })
 
         // dispatch({ type: 'CHANGE_SIMULATOR', payload: sim.id})
 
-    
+
     };
 
     return (
@@ -66,6 +76,25 @@ function SimulatorForm() {
                         <FormControlLabel value="Gain" onChange={handleChange} control={<Radio />} label="Gain" />
                         <FormControlLabel value="Lose" onChange={handleChange} control={<Radio />} label="Loose" />
                     </RadioGroup>
+
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Activity Level</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={'5'}
+                            label="Age"
+                            onChange={handleActivityLevel}
+                        >
+                            <MenuItem value={1}>sleeping</MenuItem>
+                            <MenuItem value={2}>sedetary</MenuItem>
+                            <MenuItem value={3}>light</MenuItem>
+                            <MenuItem value={4}>moderate</MenuItem>
+                            <MenuItem value={5}>active</MenuItem>
+
+                        </Select>
+                    </FormControl>
+
                     <Box sx={{ mt: 2 }}>
                         <Slider
                             aria-label="Pounds"

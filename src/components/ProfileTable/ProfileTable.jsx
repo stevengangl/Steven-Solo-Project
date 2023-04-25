@@ -86,7 +86,7 @@ function ProfileTable() {
 
 
   return (
-    <div style="display: flex; ">
+    <div >
           <h1>profile</h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 150 }} aria-label="simple table">
@@ -116,7 +116,7 @@ function ProfileTable() {
 
       
 
-                {idToEdit === item.id  ? <div style="display: flex; flex-direction: row; align-items: center; margin-top: 1rem;" >
+                {idToEdit === item.id  ? <div >
 
 <br />
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
