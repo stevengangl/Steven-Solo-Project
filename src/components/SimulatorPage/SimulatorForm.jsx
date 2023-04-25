@@ -45,15 +45,16 @@ function SimulatorForm() {
 
     const handleActivityLevel = (event) => {
         setActivityLevel(event.target.value);
-        // console.log('gain or lose?:', gainOrLose)
+        console.log('handler:', activityLevel)
     };
     function handleClick() {
         const weight = weightValue
         const todo = gainOrLose
-        // console.log('WEIGHT AND TODO:', sim)
+        const level = activityLevel
+        console.log('level:', level)
 
 
-        dispatch({ type: 'POST_WEIGHT_GOAL', payload: { weight, todo } })
+        dispatch({ type: 'POST_WEIGHT_GOAL', payload: { weight, todo, level } })
 
         // dispatch({ type: 'CHANGE_SIMULATOR', payload: sim.id})
 
@@ -82,15 +83,15 @@ function SimulatorForm() {
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={'5'}
-                            label="Age"
+                            value={activityLevel}
+                            label="Activity Level"
                             onChange={handleActivityLevel}
                         >
                             <MenuItem value={1}>sleeping</MenuItem>
-                            <MenuItem value={2}>sedetary</MenuItem>
-                            <MenuItem value={3}>light</MenuItem>
-                            <MenuItem value={4}>moderate</MenuItem>
-                            <MenuItem value={5}>active</MenuItem>
+                            <MenuItem value={1.2}>sedetary</MenuItem>
+                            <MenuItem value={1.375}>light</MenuItem>
+                            <MenuItem value={1.55}>moderate</MenuItem>
+                            <MenuItem value={1.725}>active</MenuItem>
 
                         </Select>
                     </FormControl>

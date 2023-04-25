@@ -27,11 +27,13 @@ router.get('/', rejectUnauthenticated, (req, res) => {
  * POST route template
  */
 router.post('/', (req, res) => {
-    // console.log('at start of post router', req.body)
+    console.log('at start of post router', req.body)
     const newInput = req.body;
-    const queryText = `INSERT INTO "simulator" (weight, todo, "inputEntered", "user_id")
-    VALUES ($1, $2, true, $3)`;
-    const queryValues = [ newInput.weight, newInput.todo, req.user.id]
+    console.log('active:', newInput.level)
+
+    const queryText = `INSERT INTO "simulator" (weight, todo, "active", "inputEntered", "user_id")
+    VALUES ($1, $2, $3, true, $4)`;
+    const queryValues = [ newInput.weight, newInput.todo, newInput.level, req.user.id, ]
     pool.query(queryText, queryValues)
         .then(() => res.sendStatus(201))
         .catch(error => {

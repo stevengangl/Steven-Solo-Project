@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 function* postSim(action) {
-    // console.log('in post sim',action.payload)
+    console.log('in post sim',action.payload)
     try {
         yield axios.post('/api/simulator', action.payload)
         // console.log('in post info',action.payload)
