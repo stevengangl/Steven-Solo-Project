@@ -19,30 +19,71 @@ function handleClick(){
   history.push('/calculator')
 }
 
+function handleProfile(){
+  history.push('/profile')
+}
+function handleSimulator(){
+  history.push('/simulator')
+}
+
   return (
     <div className="container">
+<Card sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth:350, maxHeight: 350, borderRadius: '5%', backgroundColor: 'green'}}>
+        <CardActionArea onClick={handleProfile}>
+          <div style={{ backgroundColor: 'green', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+            <CardMedia
+              component="img"
+              image='https://cdn.dribbble.com/users/3293/screenshots/2591498/screen_shot_2016-03-15_at_12.51.52_pm.png'
+              alt=""
+              style={{ width: '150px', height: '150px', borderRadius: '95%' }}
+            />
+            <br />
+                 <Typography gutterBottom variant="h5" component="div">
+              Edit Profile!
+            </Typography>
+          </div>
 
+        </CardActionArea>
+      </Card>
+<br />
 
+      <br></br>
 
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth:350, maxHeight: 350, borderRadius: '5%', backgroundColor: 'green'}}>
         <CardActionArea onClick={handleClick}>
-          <div style={{ backgroundColor: 'lightgray', padding: '10px' }}>
+          <div style={{ backgroundColor: 'lightblue', padding: '10px' , display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
             <CardMedia
               component="img"
               image='https://www.collinsdictionary.com/images/full/calculator_160993982.jpg'
-              alt="green iguana"
-              style={{ width: '250px', height: '250px' }}
-            />
+              alt=""
+              style={{ width: '200px', height: '200px', borderRadius: '95%' }}
+            /> <br />
+                 <Typography gutterBottom variant="h5" component="div">
+              Calorie Calculator!
+            </Typography>
           </div>
+  
 
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Calorie Calculator
+        </CardActionArea>
+      </Card>
+
+      <br></br>
+
+      <Card sx={{ maxWidth:350, maxHeight: 350, borderRadius: '5%', backgroundColor: 'green'}}>
+        <CardActionArea onClick={handleSimulator}>
+          <div style={{ backgroundColor: 'aquamarine', padding: '10px' , display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+            <CardMedia
+              component="img"
+              image=''
+              alt=""
+              style={{ width: '200px', height: '200px', borderRadius: '95%' }}
+            /> <br />
+                 <Typography gutterBottom variant="h5" component="div">
+              Simulator!
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Click here to see results
-            </Typography>
-          </CardContent>
+          </div>
+  
+
         </CardActionArea>
       </Card>
 
@@ -53,7 +94,8 @@ function handleClick(){
 
 
 
-      <br></br>
+
+
       <br></br><br></br>
       <br></br><br></br>
       <br></br>

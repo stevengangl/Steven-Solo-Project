@@ -173,36 +173,6 @@ function Nav() {
           </Main>
         </Box>
 
-        {/* If a user is logged in, show these links
-        {user.id && (
-          <>
-            <Link className="navLink" to="/user">
-              Home
-            </Link>
-
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-
-            <Link className="navLink" to="/profile">
-              Profile Page
-            </Link>
-
-            <Link className="navLink" to="/calculator">
-              Calculator Page
-            </Link>
-
-            <Link className="navLink" to="/simulator">
-              Simulator Page
-            </Link>
-
-            <LogOutButton className="navLink" />
-          </>
-        )} */}
-
-        {/* <Link className="navLink" to="/about">
-          About
-        </Link> */}
       </div>
     </div>
 

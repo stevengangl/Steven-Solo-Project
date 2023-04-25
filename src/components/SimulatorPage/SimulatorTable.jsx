@@ -105,8 +105,11 @@ function SimulatorTable() {
 
     return (
         <>
-            <h2>{sim.active}</h2>
-            <h2>or show every fitness level in card?</h2>
+            <h1>want to change color based on activity level chosen</h1>
+            <h1>color also changes from lose/gain</h1>
+            <h1>add confirmation on new post/ alert on delete</h1>
+
+
 
             <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
 
@@ -118,7 +121,7 @@ function SimulatorTable() {
                         <CardHeader
 
                             title={'Goal: ' + item.todo + ' ' + item.weight + 'lbs'}
-                            subheader={user.username + 's' + ' daily burned calories ' + Math.round(Calculate() * item.active)}
+                            // subheader={user.username + 's' + ' daily burned calories ' + Math.round(Calculate() * item.active)}
                         />
                         <CardContent>
                             <Typography variant="body2" color="#" fontSize='18px'>
@@ -147,8 +150,8 @@ function SimulatorTable() {
                                 <br />
                                 Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 500 : -500)))}
                                 <br />
-                                active level: {item.active}
-                                <br />
+                                {/* active level: {item.active}
+                                <br /> */}
 
                             </Typography>
                         </CardContent>
@@ -221,18 +224,12 @@ function SimulatorTable() {
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
                                 <Typography variant="body2" color="" fontSize='18px'>
-                                    Approach: light
-                                    <br />
-                                    Days: {item.weight * 3500 / 250}
-                                    <br />
-                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250
-                                    <br />
-                                    Daily Calories needed: {(Calculate() + (item.todo === 'Gain' ? 250 : -250))}
-                                    <br />
+                                {user.username +   ' burns ' + Math.round(Calculate() * item.active) + ' everyday'} 
+                        
 
                                 </Typography>
                                 <br />
-                                <Typography variant="body2" color="text.secondary" fontSize='18px'>
+                                {/* <Typography variant="body2" color="text.secondary" fontSize='18px'>
                                     Approach: Aggressive
                                     <br />
                                     Days: {item.weight * 3500 / 1000}
@@ -242,7 +239,7 @@ function SimulatorTable() {
                                     Daily Calories needed: {(Calculate() + (item.todo === 'Gain' ? 1000 : -1000))}
                                     <br />
 
-                                </Typography>
+                                </Typography> */}
 
                             </CardContent>
                         </Collapse>

@@ -67,7 +67,7 @@ function Sedetary(){
             let age = info[0].age * 6.8;
 
             let calories = 66 + weight + height - age
-            console.log('male', calories)
+            // console.log('male', calories)
             return Math.round(calories * 1.2)
         }
         else {
@@ -76,7 +76,7 @@ function Sedetary(){
             let age = info[0].age * 4.7;
 
             let calories = 655 + weight + height - age
-            console.log('female', calories)
+            // console.log('female', calories)
 
             return Math.round(calories * 1.2) 
         }
