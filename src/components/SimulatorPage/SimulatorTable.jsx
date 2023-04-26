@@ -159,11 +159,11 @@ function SimulatorTable() {
                             position: 'relative',
                             top: '0px',
                             left: '0px',
-                        }} >
-                            <DeleteIcon onClick={() => {
-                                console.log('item.id:', item.id);
-                                dispatch({ type: 'DELETE_SIM_ITEM', payload: item.id })
-                            }} />
+                        }} onClick={() => {
+                            console.log('item.id:', item.id);
+                            dispatch({ type: 'DELETE_SIM_ITEM', payload: item.id })
+                        }}  >
+                            <DeleteIcon />
                         </IconButton >
                         <CardActions disableSpacing>
                             {/* <Typography variant="body2" color="">

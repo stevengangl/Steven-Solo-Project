@@ -168,51 +168,47 @@ function ProfileTable() {
           <button onClick={() => updateItem(idToEdit)}>Save changes</button>
         </div>
       ) : (
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 150 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell align="right">Gender</TableCell>
-                <TableCell align="right">Weight</TableCell>
-                <TableCell align="right">Height</TableCell>
-                <TableCell align="right">Age</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {info
-                ? info.map((item) => (
-                    <TableRow
-                      key={item.id}
-                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                      >
-                        <TableCell component="th" scope="row">
-                          {user.username}
-                        </TableCell>
-                        <TableCell align="right">{item.gender}</TableCell>
-                        <TableCell align="right">{item.weight} lbs </TableCell>
-                        <TableCell align="right">{item.height} inches</TableCell>
-                        <TableCell align="right">{item.age} </TableCell>
-    
-                        <TableCell>
-                          {idToEdit === item.id ? (
+<div>
+        {info
+          ? info.map((item) => (
+            <React.Fragment key={item.id}>
+              <Card sx={{ minWidth: 275 }}>
+                <CardContent>
+                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                    Gender: {item.gender}
+                  </Typography>
+                  <Typography variant="h5" component="div">
+                    Weight: {item.weight}
+                  </Typography>
+                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                    Height: {item.height}
+                  </Typography>
+                  <Typography variant="body2">
+                    Age: {item.age}
+                  </Typography>
+                </CardContent>
+                <CardContent>
+                       {idToEdit === item.id ? (
                             <button onClick={() => updateItem(item.id)}>
                               Save changes
                             </button>
                           ) : (
                             <button onClick={() => addInputField(item)}>Edit</button>
                           )}
-                        </TableCell>
-                      </TableRow>
-                    ))
-                  : "loading"}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        )}
+                </CardContent>
+                <CardActions>
+                  <Button size="small">Learn More</Button>
+                </CardActions>
+              </Card>
+            </React.Fragment>
+          ))
+          : ("loading")}
       </div>
-    );
-  
+    )}
+  </div>
+      )
+        
 }
 
-export default ProfileTable
+
+export default ProfileTable;

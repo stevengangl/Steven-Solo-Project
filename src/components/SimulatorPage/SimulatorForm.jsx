@@ -37,6 +37,7 @@ function SimulatorForm() {
         setWeightValue(weightValue)
         // console.log('value', weightValue)
     }
+    
     //this sets the gain or loose state to gain or lose
     const handleChange = (event) => {
         setGainOrLose(event.target.value);

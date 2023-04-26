@@ -106,6 +106,7 @@ function Coma(){
         image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Man_Sleeping_in_Bed_Cartoon_Vector.svg/1024px-Man_Sleeping_in_Bed_Cartoon_Vector.svg.png?20180304135213"
         alt="Paella dish"
         style={{ width: '350px', height: '250px' }}
+    
 
       />
                         <CardContent>
