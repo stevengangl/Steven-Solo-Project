@@ -96,11 +96,11 @@ function ProfileTable() {
 
   return (
     <div>
-      <h1>profile</h1>
+      <h1>{user.username} Profile Page</h1>
       {isEditing ? (
         <div>
           {/* ... (editing form) */}
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', backgroundColor: 'lightgrey', border: '1px solid #000' }}>
             <div>
               {/* ...(Input Fields) */}
               <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
@@ -172,18 +172,18 @@ function ProfileTable() {
         {info
           ? info.map((item) => (
             <React.Fragment key={item.id}>
-              <Card sx={{ minWidth: 275 }}>
+              <Card sx={{ minWidth: 275, backgroundColor: 'lightblue', border: '1px transparent red' }}>
                 <CardContent>
-                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                  <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
                     Gender: {item.gender}
                   </Typography>
-                  <Typography variant="h5" component="div">
+                  <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
                     Weight: {item.weight}
                   </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
                     Height: {item.height}
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
                     Age: {item.age}
                   </Typography>
                 </CardContent>
@@ -196,9 +196,9 @@ function ProfileTable() {
                             <button onClick={() => addInputField(item)}>Edit</button>
                           )}
                 </CardContent>
-                <CardActions>
+                {/* <CardActions>
                   <Button size="small">Learn More</Button>
-                </CardActions>
+                </CardActions> */}
               </Card>
             </React.Fragment>
           ))
