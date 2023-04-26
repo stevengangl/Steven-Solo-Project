@@ -27,9 +27,9 @@ function handleSimulator(){
   return (
 
     <div className="container">
-<Card sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth:350, maxHeight: 350, borderRadius: '5%', backgroundColor: 'green'}}>
+<Card  sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth:350, maxHeight: 350, borderRadius: '5%'}}>
         <CardActionArea onClick={handleProfile}>
-          <div style={{ backgroundColor: 'lightgreen', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+          <div  style={{ backgroundColor: '#94cbfd', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
             <CardMedia
               component="img"
               image='https://cdn.dribbble.com/users/3293/screenshots/2591498/screen_shot_2016-03-15_at_12.51.52_pm.png'
@@ -49,7 +49,7 @@ function handleSimulator(){
 
       <Card sx={{ maxWidth:350, maxHeight: 350, borderRadius: '5%', backgroundColor: 'green'}}>
         <CardActionArea onClick={handleClick}>
-          <div style={{ backgroundColor: 'lightblue', padding: '10px' , display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+          <div style={{ backgroundColor: '#c6d5fa', padding: '10px' , display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
             <CardMedia
               component="img"
               image='https://www.collinsdictionary.com/images/full/calculator_160993982.jpg'
@@ -67,9 +67,9 @@ function handleSimulator(){
 
       <br></br>
 
-      <Card sx={{ maxWidth:350, maxHeight: 350, borderRadius: '5%', backgroundColor: 'green', }}>
+      <Card sx={{ maxWidth:350, maxHeight: 350, borderRadius: '5%' }}>
         <CardActionArea onClick={handleSimulator}>
-          <div style={{ backgroundColor: 'pink', padding: '10px' , display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+          <div style={{ backgroundColor: '#94cbfd', padding: '10px' , display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
             <CardMedia
               component="img"
               image={cap}

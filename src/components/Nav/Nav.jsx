@@ -15,6 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { colors } from '@mui/material';
 
 
 
@@ -27,10 +28,12 @@ function Nav() {
   const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
       flexGrow: 1,
+      
       padding: theme.spacing(3),
       transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
+        
       }),
       marginLeft: `-${drawerWidth}px`,
       ...(open && {
@@ -39,6 +42,7 @@ function Nav() {
           duration: theme.transitions.duration.enteringScreen,
         }),
         marginLeft: 0,
+        
       }),
     }),
   );
@@ -64,6 +68,7 @@ function Nav() {
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
+    
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
@@ -100,9 +105,9 @@ function Nav() {
           </Link>
         )}
 
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', }}>
           <CssBaseline />
-          <AppBar position="fixed" open={open}>
+          <AppBar position="fixed" open={open} sx={{ backgroundColor: '#94cbfd'}}>
             <Toolbar>
               <IconButton
                 color="inherit"
@@ -113,8 +118,13 @@ function Nav() {
               >
                 <MenuIcon />
               </IconButton>
-              <Typography variant="h6" noWrap component="div">
-                HealthyMe          </Typography>
+              <Link id='home' className="" to="/home">
+                <Typography variant="" noWrap component="div" sx={{ color: 'black', fontSize:'30px', fontWeight: 'bold', fontFamily: 'sans-serif' }}>
+                  HealthyMe
+                </Typography>
+              </Link>
+
+
             </Toolbar>
           </AppBar>
           <Drawer
@@ -169,7 +179,7 @@ function Nav() {
             {/* <Typography paragraph>
               test 1
             </Typography> */}
-    
+
           </Main>
         </Box>
 
