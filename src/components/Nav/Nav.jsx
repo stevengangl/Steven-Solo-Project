@@ -138,7 +138,7 @@ function Nav() {
             <Divider />
             {user.id && (
               <>
-                <Link className="navLink" to="/user" onClick={handleLinkClick}>
+                <Link id='home' className="navLink" to="/user" onClick={handleLinkClick}>
                   Home
                 </Link>
 
