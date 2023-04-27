@@ -82,7 +82,6 @@ function Coma() {
     }
     return (
         <>
-            <h1> {user.username} Results </h1>
 
 
             {info.length ? (

@@ -27,6 +27,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from "@mui/material";
+import Stack from '@mui/material/Stack';
 
 
 
@@ -194,7 +195,9 @@ function ProfileTable() {
               </FormControl>
             </div>
           </Box>
-          <button onClick={() => updateItem(idToEdit)}>Save changes</button>
+          {/* <button onClick={() => updateItem(idToEdit)}>Save changes</button> */}
+          <Button variant="contained" onClick={() => updateItem(idToEdit)} sx={{ backgroundColor: 'green' }}>Save Changes</Button>
+
         </div>
       ) : (
         <div style={{ backgroundColor: '', display: 'flex', alignItems: 'center', flexDirection: 'column' }} >
@@ -207,7 +210,7 @@ function ProfileTable() {
                   component="img"
                     sx={{ height: 140 }}
                     image="/static/images/cards/contemplative-reptile.jpg"
-                    title="green iguana"
+                    title="picture goes here"
                   />
                   <CardContent>
                     <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
@@ -228,11 +231,15 @@ function ProfileTable() {
                   </CardContent>
                   <CardContent>
                     {idToEdit === item.id ? (
-                      <button onClick={() => updateItem(item.id)} >
-                        Save changes
-                      </button>
+                      // <button onClick={() => updateItem(item.id)} >
+                      //   Save changes
+                      // </button>
+                            <Button variant="contained" onClick={() => updateItem(item.id)} sx={{ backgroundColor: 'green' }}>Save</Button>
+
                     ) : (
-                      <button onClick={() => addInputField(item)}>Edit</button>
+                      // <button onClick={() => addInputField(item)}>Edit</button>
+                      <Button variant="contained" onClick={() => addInputField(item)} sx={{ backgroundColor: 'grey' }} >Edit</Button>
+
                     )}
                   </CardContent>
                   {/* <CardActions>
