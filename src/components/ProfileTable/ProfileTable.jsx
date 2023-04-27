@@ -160,31 +160,35 @@ function ProfileTable() {
               <FormControl>
                 <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
                 <RadioGroup
-                  aria-label="gender"
-                  value={gender}
-                  onChange={handleGender}
-                  sx={{ color: '#000' }}
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  defaultValue="female"
+                  name="radio-buttons-group"
                 >
+                  {/* <FormControlLabel value="1" onChange={handleGender} control={<Radio />} label="Male" />
+                  <FormControlLabel value="2" onChange={handleGender} control={<Radio />} label="Female" />
+                  <FormControlLabel value="3" onChange={handleGender} control={<Radio />} label="Non-Binary" /> */}
                   <FormControlLabel
-                    value="male"
+                    value="1"
+                    onChange={handleGender}
                     control={<Radio />}
                     label="Male"
-                    sx={{ color: '#000', '& .MuiRadio-root': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked .MuiSvgIcon-root': { color: 'green' } }}
+                    sx={{ color: '#fff', '& .MuiRadio-root': { color: '#fff' } }}
                   />
                   <FormControlLabel
-                    value="female"
+                    value="2"
+                    onChange={handleGender}
                     control={<Radio />}
                     label="Female"
-                    sx={{ color: '#000', '& .MuiRadio-root': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked .MuiSvgIcon-root': { color: 'green' } }}
+                    sx={{ backgroundolor: '#fff', '& .MuiRadio-root': { color: '#fff' } }}
                   />
                   <FormControlLabel
-                    value="non-binary"
+                    value="3"
+                    onChange={handleGender}
                     control={<Radio />}
                     label="Non-Binary"
-                    sx={{ color: '#000', '& .MuiRadio-root': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked .MuiSvgIcon-root': { color: 'green' } }}
+                    sx={{ color: '#fff', '& .MuiRadio-root': { color: '#fff' } }}
                   />
                 </RadioGroup>
-
               </FormControl>
             </div>
           </Box>
@@ -215,13 +219,11 @@ function ProfileTable() {
                   </CardContent>
                   <CardContent>
                     {idToEdit === item.id ? (
-                            <Button variant="contained" size="large" onClick={() => updateItem(item.id)} >Save changes</Button>
-
-                      // <button class='ProfileBtn' onClick={() => updateItem(item.id)} >
-                      //   Save changes
-                      // </button>
+                      <button onClick={() => updateItem(item.id)} >
+                        Save changes
+                      </button>
                     ) : (
-                      <button  onClick={() => addInputField(item)}>Edit</button>
+                      <button onClick={() => addInputField(item)}>Edit</button>
                     )}
                   </CardContent>
                   {/* <CardActions>
