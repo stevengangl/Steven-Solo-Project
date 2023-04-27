@@ -172,21 +172,21 @@ function ProfileTable() {
                     onChange={handleGender}
                     control={<Radio />}
                     label="Male"
-                    sx={{ color: '#fff', '& .MuiRadio-root': { color: '#fff' } }}
+                    sx={{ color: 'black', '& .MuiRadio-root': { color: 'black' } }}
                   />
                   <FormControlLabel
                     value="2"
                     onChange={handleGender}
                     control={<Radio />}
                     label="Female"
-                    sx={{ backgroundolor: '#fff', '& .MuiRadio-root': { color: '#fff' } }}
+                    sx={{ backgroundolor: '#fff', '& .MuiRadio-root': { color: 'black' } }}
                   />
                   <FormControlLabel
                     value="3"
                     onChange={handleGender}
                     control={<Radio />}
                     label="Non-Binary"
-                    sx={{ color: '#fff', '& .MuiRadio-root': { color: 'red' } }}
+                    sx={{ color: 'black', '& .MuiRadio-root': { color: 'black' } }}
                   />
                 </RadioGroup>
               </FormControl>
@@ -199,7 +199,7 @@ function ProfileTable() {
           {info
             ? info.map((item) => (
               <React.Fragment key={item.id}>
-                <Card sx={{ display: 'flex', alignItems: 'center', minWidth: 350, minHeight: 600, borderRadius: '5%', padding: '10px', backgroundColor: '#94cbfd' }}>
+                <Card sx={{ display: 'flex', alignItems: 'center', minWidth: 350, minHeight: 600, borderRadius: '5%', padding: '10px', backgroundColor: '  #1a7bd67b', color: ' black' }}>
                   <CardContent>
                     <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
                       Gender: {item.gender}
