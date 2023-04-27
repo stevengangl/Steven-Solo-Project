@@ -25,6 +25,8 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from "@mui/material";
 
 
 
@@ -96,7 +98,7 @@ function ProfileTable() {
 
   return (
     <div>
-      <h1>{user.username} Profile Page</h1>
+      {/* <h1>{user.username} Profile Page</h1> */}
       {isEditing ? (
         <div>
           {/* ... (editing form) */}
@@ -199,7 +201,14 @@ function ProfileTable() {
           {info
             ? info.map((item) => (
               <React.Fragment key={item.id}>
-                <Card sx={{ display: 'flex', alignItems: 'center', minWidth: 350, minHeight: 600, borderRadius: '5%', padding: '10px', backgroundColor: '  #1a7bd67b', color: ' black' }}>
+                <Card sx={{ display: 'flex', minWidth: 350, minHeight: 600, borderRadius: '5%', padding: '10px', backgroundColor: '  #1a7bd67b', color: ' black' }}>
+                  <CardActionArea>
+                  <CardMedia
+                  component="img"
+                    sx={{ height: 140 }}
+                    image="/static/images/cards/contemplative-reptile.jpg"
+                    title="green iguana"
+                  />
                   <CardContent>
                     <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
                       Gender: {item.gender}
@@ -229,6 +238,7 @@ function ProfileTable() {
                   {/* <CardActions>
                   <Button size="small">Learn More</Button>
                 </CardActions> */}
+                </CardActionArea>
                 </Card>
               </React.Fragment>
             ))

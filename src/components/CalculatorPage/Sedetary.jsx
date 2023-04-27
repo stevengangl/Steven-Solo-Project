@@ -89,8 +89,8 @@ function Sedetary(){
                 <>
 
                     <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: '#c6d5fa', border: '1px solid #000',
-                        padding: '25px', margin: '2px'}}>
-                        <CardHeader
+                        padding: '25px', margin: '2px', fontSize:'25px'}}>
+                        <CardHeader fontSize='25px'
                             // avatar={
                             //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
                             //     ?
@@ -98,7 +98,7 @@ function Sedetary(){
                             // }
 
                             title='Sedetary'
-                            subheader="Sitting all day, minimal movements"
+                            // subheader="Sitting all day, minimal movements"
                         />
                         <CardMedia
         component="img"
@@ -109,8 +109,8 @@ function Sedetary(){
 
       />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary" fontSize='18px'>
-                                {user.username} would burn {Calculate()} calories in 24 hours
+                        <Typography variant="body2" color="black" fontSize='28px'>
+                                Daily Calories Burned:  {Calculate()}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
@@ -133,12 +133,12 @@ function Sedetary(){
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
-                                <Typography paragraph>i can change this:</Typography>
-                                <Typography paragraph>
-                                    i can put info here
+                            <Typography
+                                    paragraph fontSize='22px'> Sitting or lying down for most of the day with little or no physical activity.
                                 </Typography>
-                                <Typography paragraph>
-                                    and here
+
+                                <Typography
+                                    paragraph>need to click on basic metabolic rate and go to static page with info
                                 </Typography>
                             </CardContent>
                         </Collapse>

@@ -100,8 +100,7 @@ function ModeratelyActive(){
                             // }
 
                             title='Moderately Active'
-                            subheader=" Going for a walk after work everyday,
-                             "
+                            // subheader=" Going for a walk after work everyday,"
                         />
                         <CardMedia
         component="img"
@@ -114,8 +113,8 @@ function ModeratelyActive(){
 
       />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary" fontSize='18px'>
-                                {user.username} would burn {Calculate()} calories in 24 hours 
+                        <Typography variant="body2" color="black" fontSize='28px'>
+                                Daily Calories Burned:  {Calculate()}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
@@ -138,12 +137,12 @@ function ModeratelyActive(){
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
-                                <Typography paragraph>i can change this:</Typography>
-                                <Typography paragraph>
-                                    i can put info here
+                            <Typography  paragraph fontSize='24px'>This is based on  if {user.username} spent 24 hours in bed</Typography>
+                                <Typography
+                                    paragraph fontSize='24px'>To get this we take the users basic metabolic rate and multiply it by 1
                                 </Typography>
-                                <Typography paragraph>
-                                    and here
+                                <Typography
+                                    paragraph>need to click on basic metabolic rate and go to static page with info
                                 </Typography>
                             </CardContent>
                         </Collapse>

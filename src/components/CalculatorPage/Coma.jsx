@@ -26,7 +26,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
-function Coma(){
+function Coma() {
 
 
 
@@ -82,14 +82,16 @@ function Coma(){
     }
     return (
         <>
-        <h1> {user.username} Results </h1>
-  
+            <h1> {user.username} Results </h1>
+
 
             {info.length ? (
                 <>
 
-                    <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: 'lightblue', border: '1px solid #000',
-                        padding: '25px', margin: '2px' }}>
+                    <Card sx={{
+                        maxWidth: 400, maxHeight: 1500, backgroundColor: 'lightblue', border: '1px solid #000',
+                        padding: '25px', margin: '2px'
+                    }}>
                         <CardHeader
                             // avatar={
                             //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -98,25 +100,26 @@ function Coma(){
                             // }
 
                             title='Sleeping'
-                            subheader="In bed all day"
+                        // subheader= "In bed all day"
+
                         />
                         <CardMedia
-        component="img"
-        height="250"
-        image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Man_Sleeping_in_Bed_Cartoon_Vector.svg/1024px-Man_Sleeping_in_Bed_Cartoon_Vector.svg.png?20180304135213"
-        alt="Paella dish"
-        style={{ width: '350px', height: '250px' }}
-    
+                            component="img"
+                            height="250"
+                            image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Man_Sleeping_in_Bed_Cartoon_Vector.svg/1024px-Man_Sleeping_in_Bed_Cartoon_Vector.svg.png?20180304135213"
+                            alt="Paella dish"
+                            style={{ width: '350px', height: '250px' }}
 
-      />
+
+                        />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary" fontSize='18px'>
-                                {user.username} would burn {Calculate()} calories in 24 hours 
+                            <Typography variant="body2" color="black" fontSize='28px'>
+                                Daily Calories Burned:  {Calculate()}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                            Click to see how we got these results                          </Typography>
+                            Laying down all day with no physical activity.                       </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
@@ -133,14 +136,13 @@ function Coma(){
                             </ExpandMore>
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
-                            <CardContent>
-                                <Typography paragraph>i can change this:</Typography>
-                                <Typography paragraph>
-                                    i can put info here
+                            <CardContent >
+                            <Typography
+                                    paragraph fontSize='22px'>Laying down all day with no physical activity.
                                 </Typography>
-                                <Typography paragraph>
-                                    and here
-                                </Typography>
+
+
+
                             </CardContent>
                         </Collapse>
                     </Card>
@@ -149,7 +151,7 @@ function Coma(){
             ) : (
                 <p>Loading...</p>
             )}
-            
+
         </>
     );
 

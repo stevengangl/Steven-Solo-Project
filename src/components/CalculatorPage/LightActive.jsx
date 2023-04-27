@@ -96,7 +96,7 @@ function LightlyActive(){
                             // }
 
                             title='Lightly Active'
-                            subheader="daily life, running errands going to work "
+                            // subheader="daily life, running errands going to work "
                         />
                         <CardMedia
         component="img"
@@ -108,8 +108,8 @@ function LightlyActive(){
 
       />
                         <CardContent>
-                            <Typography variant="body2" color="text.secondary" fontSize='18px'>
-                                {user.username} would burn {Calculate()} calories in 24 hours 
+                        <Typography variant="body2" color="black" fontSize='28px'>
+                                Daily Calories Burned:  {Calculate()}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
@@ -132,12 +132,15 @@ function LightlyActive(){
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
-                                <Typography paragraph>i can change this:</Typography>
-                                <Typography paragraph>
-                                    i can put info here
+                            <Typography
+                                    paragraph fontSize='24px'>ight physical activity such as walking, cooking, or cleaning, but with no regular exercise routine.
                                 </Typography>
-                                <Typography paragraph>
-                                    and here
+                            <Typography  paragraph fontSize='24px'>This is based on  if {user.username} spent 24 hours in bed</Typography>
+                                <Typography
+                                    paragraph fontSize='24px'>To get this we take the users basic metabolic rate and multiply it by 1
+                                </Typography>
+                                <Typography
+                                    paragraph>need to click on basic metabolic rate and go to static page with info
                                 </Typography>
                             </CardContent>
                         </Collapse>
