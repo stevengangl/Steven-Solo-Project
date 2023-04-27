@@ -13,11 +13,14 @@ import { FilledInput } from "@mui/material";
 
 
 
+
+
 function CalculatorPage() {
 
 
 
     return (
+        <body className='CalculatorPage'>
         <div style={{
             display: 'flex', flexDirection: 'column', flexWrap: 'wrap'
         }} >
@@ -29,6 +32,7 @@ function CalculatorPage() {
             <VeryActive />
 
         </div>
+        </body>
     );
 
 }

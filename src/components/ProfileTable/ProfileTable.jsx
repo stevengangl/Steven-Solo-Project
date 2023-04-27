@@ -168,11 +168,11 @@ function ProfileTable() {
           <button onClick={() => updateItem(idToEdit)}>Save changes</button>
         </div>
       ) : (
-<div>
+<div style={{ backgroundColor: '',  display: 'flex', alignItems: 'center',  flexDirection: 'column' }} >
         {info
           ? info.map((item) => (
             <React.Fragment key={item.id}>
-              <Card sx={{ minWidth: 275, backgroundColor: 'lightblue', border: '1px transparent red' }}>
+              <Card sx={{ display: 'flex', alignItems: 'center',  maxWidth:350, maxHeight: 350, borderRadius: '5%', padding: '10px',backgroundColor: '#94cbfd' }}>
                 <CardContent>
                   <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
                     Gender: {item.gender}
