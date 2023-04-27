@@ -63,10 +63,10 @@ function SimulatorForm() {
     };
 
     return (
-        <Box display="flex" padding=" 16px">
+        <Box display="flex" padding=" 16px" justifyContent='center'>
             <Box sx={{ width: 250 }}>
-                <h2>simulator page</h2>
-                <h2>Hi {user.username}</h2>
+                {/* <h2>simulator page</h2>
+                <h2>Hi {user.username}</h2> */}
 
                 <FormControl>
                     <FormLabel id="demo-radio-buttons-group-label">I want to </FormLabel>
@@ -87,6 +87,8 @@ function SimulatorForm() {
                             value={activityLevel}
                             label="Activity Level"
                             onChange={handleActivityLevel}
+                            style={{ width: '200px' }}
+
                         >
                             <MenuItem value={1}>sleeping</MenuItem>
                             <MenuItem value={1.2}>sedetary</MenuItem>

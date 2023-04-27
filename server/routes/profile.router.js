@@ -43,7 +43,8 @@ router.post('/',rejectUnauthenticated, (req, res) => {
 
 
 /**
- * Delete an item if it's something the logged in user added
+ * Delete an item if it's something the logged in user added⭐️ add user id to cpmpare against req.user.id for cyber security purposes use this example   const queryValues = [req.user.id]
+
  */
 router.delete('/:id', (req, res) => {
   // endpoint functionality
@@ -62,7 +63,7 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
   // endpoint functionality
   const updatedItem = req.body;//this is the action.payload from shelf saga
-  const itemId = req.params.id;//this is from the api/shelf/${action.payload.id} from shelf saga
+  const itemId = req.params.id;//this is from the api/shelf/${action.payload.id} from shelf saga⭐️ add user id to cpmpare against req.user.id for cyber security purposes use this example   const queryValues = [req.user.id]
   console.log('updatedItem',req.body)
   console.log('id',req.params.id)
 
