@@ -113,7 +113,7 @@ function VeryActive(){
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                          Click to see how we got these results     </Typography>
+                         Wanna know more? Click to see info     </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
@@ -131,12 +131,12 @@ function VeryActive(){
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
-                            <Typography  paragraph fontSize='24px'>This is based on  if {user.username} spent 24 hours in bed</Typography>
-                                <Typography
-                                    paragraph fontSize='24px'>To get this we take the users basic metabolic rate and multiply it by 1
+                            <Typography
+                                    paragraph fontSize='22px'> Physical activity throughout the day, such as running, intense cardio workouts, high-intensity interval training, or participating in sports.
                                 </Typography>
+
                                 <Typography
-                                    paragraph>need to click on basic metabolic rate and go to static page with info
+                                    paragraph fontSize='22px'> 
                                 </Typography>
                             </CardContent>
                         </Collapse>

@@ -115,7 +115,7 @@ function Sedetary(){
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                            Click to see how we got these results                           </Typography>
+                            Wanna know more? Click to see info                            </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
@@ -137,9 +137,7 @@ function Sedetary(){
                                     paragraph fontSize='22px'> Sitting or lying down for most of the day with little or no physical activity.
                                 </Typography>
 
-                                <Typography
-                                    paragraph>need to click on basic metabolic rate and go to static page with info
-                                </Typography>
+                            
                             </CardContent>
                         </Collapse>
                     </Card>

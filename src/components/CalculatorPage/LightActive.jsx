@@ -114,7 +114,7 @@ function LightlyActive(){
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                            Click to see how we got these results                           </Typography>
+                            Wanna know more? Click to see info                            </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
@@ -132,15 +132,9 @@ function LightlyActive(){
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
-                            <Typography
-                                    paragraph fontSize='24px'>ight physical activity such as walking, cooking, or cleaning, but with no regular exercise routine.
-                                </Typography>
-                            <Typography  paragraph fontSize='24px'>This is based on  if {user.username} spent 24 hours in bed</Typography>
+                
                                 <Typography
-                                    paragraph fontSize='24px'>To get this we take the users basic metabolic rate and multiply it by 1
-                                </Typography>
-                                <Typography
-                                    paragraph>need to click on basic metabolic rate and go to static page with info
+                                    paragraph fontSize='22px'> light physical activity throughout the day, such as taking short walks, doing household chores, or standing for extended periods of time.
                                 </Typography>
                             </CardContent>
                         </Collapse>

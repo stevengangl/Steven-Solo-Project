@@ -119,7 +119,7 @@ function ModeratelyActive(){
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                            Click to see how we got these results                           </Typography>
+                            Wanna know more? Click to see info                            </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
@@ -137,12 +137,8 @@ function ModeratelyActive(){
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
-                            <Typography  paragraph fontSize='24px'>This is based on  if {user.username} spent 24 hours in bed</Typography>
-                                <Typography
-                                    paragraph fontSize='24px'>To get this we take the users basic metabolic rate and multiply it by 1
-                                </Typography>
-                                <Typography
-                                    paragraph>need to click on basic metabolic rate and go to static page with info
+                            <Typography
+                                    paragraph fontSize='22px'>  moderate physical activity throughout the day, such as brisk walking, light jogging, cycling, or dancing.
                                 </Typography>
                             </CardContent>
                         </Collapse>

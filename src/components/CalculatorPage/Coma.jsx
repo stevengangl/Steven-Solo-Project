@@ -119,7 +119,7 @@ function Coma() {
                         </CardContent>
                         <CardActions disableSpacing>
                             <Typography variant="body2" color="text.secondary">
-                            Laying down all day with no physical activity.                       </Typography>
+                                Wanna know more? Click to see info                        </Typography>
                             {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
@@ -137,7 +137,7 @@ function Coma() {
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent >
-                            <Typography
+                                <Typography
                                     paragraph fontSize='22px'>Laying down all day with no physical activity.
                                 </Typography>
 
