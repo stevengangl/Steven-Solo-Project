@@ -105,9 +105,9 @@ function SimulatorTable() {
 
     return (
         <>
-            <h1>want to change color based on activity level chosen</h1>
+            {/* <h1>want to change color based on activity level chosen</h1>
             <h1>color also changes from lose/gain</h1>
-            <h1>add confirmation on new post/ alert on delete</h1>
+            <h1>add confirmation on new post/ alert on delete</h1> */}
 
 
 

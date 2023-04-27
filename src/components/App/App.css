@@ -2,7 +2,7 @@ html,
 body,
 #react-root {
   height: 100%;
-  /* background-color: #d3e8ed; */
+  background-color: #d3e8ed;
 }
 
 body {
@@ -123,10 +123,35 @@ Card Colors
   background-color:  '#94cbfd';
 }
 
+
+/* --------------------------------------------------------------------------------
+background Colors
+-------------------------------------------------------------------------------- */
+
 .CalculatorPage {
-  background-image: url('../images/capTransform\ Small.jpeg');
+  background-color: #d3e8ed;
 }
 
 .ProfilePage {
-  background-image: url('../images/capTransform\ Small.jpeg');
+  background-color: #d3e8ed;
 }
+
+
+
+/* --------------------------------------------------------------------------------
+radio buttons
+-------------------------------------------------------------------------------- */
+
+.MuiRadio-colorPrimary.Mui-checked {
+  color: #000;
+}
+
+.MuiRadio-colorPrimary.Mui-checked .MuiSvgIcon-root {
+  color: #fff;
+}
+
+
+/* --------------------------------------------------------------------------------
+button Colors
+-------------------------------------------------------------------------------- */
+

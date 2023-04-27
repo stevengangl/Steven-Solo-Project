@@ -90,7 +90,7 @@ function ModeratelyActive(){
             {info.length ? (
                 <>
 
-                    <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: 'grey', border: '1px solid #000',
+                    <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: '#c6d5fa', border: '1px solid #000',
                         padding: '25px', margin: '2px' }}>
                         <CardHeader
                             // avatar={

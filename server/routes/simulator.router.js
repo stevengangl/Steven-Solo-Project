@@ -8,7 +8,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
     // GET route code here
-    const queryText = `SELECT * FROM "simulator"  WHERE user_id = $1 ;`
+    const queryText = `SELECT * FROM "simulator"  WHERE user_id = $1 ORDER BY id DESC;`
     const queryValues = [req.user.id]
     pool
         .query(queryText, queryValues)

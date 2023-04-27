@@ -51,7 +51,7 @@ function ProfileTable() {
 
     const selectedValue = parseInt(event.target.value);
     let selectedGender;
-    
+
     if (selectedValue === 1) {
       selectedGender = 'Male';
     } else if (selectedValue === 2) {
@@ -59,7 +59,7 @@ function ProfileTable() {
     } else {
       selectedGender = 'Non-Binary';
     }
-    
+
     setGender(selectedGender);
   }
 
@@ -100,7 +100,7 @@ function ProfileTable() {
       {isEditing ? (
         <div>
           {/* ... (editing form) */}
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', backgroundColor: 'lightgrey', border: '1px solid #000' }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', backgroundColor: '', border: '', borderRadius: '5%' }}>
             <div>
               {/* ...(Input Fields) */}
               <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
@@ -115,10 +115,12 @@ function ProfileTable() {
                   placeholder="165"
                   onChange={(event) => setWeight(event.target.value)}
                   value={weight}
+                  sx={{ backgroundColor: '#fff' }}
+
                 />
                 <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText>
               </FormControl>
-  
+
               <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                 <OutlinedInput
                   id="3"
@@ -131,10 +133,12 @@ function ProfileTable() {
                   placeholder="165"
                   onChange={(event) => setHeight(event.target.value)}
                   value={height}
+                  sx={{ backgroundColor: '#fff' }}
+
                 />
                 <FormHelperText id="outlined-weight-helper-text">Height</FormHelperText>
               </FormControl>
-  
+
               <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                 <OutlinedInput
                   id="3"
@@ -147,67 +151,91 @@ function ProfileTable() {
                   placeholder="31"
                   onChange={(event) => setAge(event.target.value)}
                   value={age}
+                  sx={{ backgroundColor: '#fff' }}
+
                 />
                 <FormHelperText id="outlined-weight-helper-text">Age</FormHelperText>
               </FormControl>
-  
+
               <FormControl>
                 <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
                 <RadioGroup
-                  aria-labelledby="demo-radio-buttons-group-label"
-                  defaultValue="female"
-                  name="radio-buttons-group"
+                  aria-label="gender"
+                  value={gender}
+                  onChange={handleGender}
+                  sx={{ color: '#000' }}
                 >
-                  <FormControlLabel value="1" onChange={handleGender} control={<Radio />} label="Male" />
-                  <FormControlLabel value="2" onChange={handleGender} control={<Radio />} label="Female" />
-                  <FormControlLabel value="3" onChange={handleGender} control={<Radio />} label="Non-Binary" />
+                  <FormControlLabel
+                    value="male"
+                    control={<Radio />}
+                    label="Male"
+                    sx={{ color: '#000', '& .MuiRadio-root': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked .MuiSvgIcon-root': { color: 'green' } }}
+                  />
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                    sx={{ color: '#000', '& .MuiRadio-root': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked .MuiSvgIcon-root': { color: 'green' } }}
+                  />
+                  <FormControlLabel
+                    value="non-binary"
+                    control={<Radio />}
+                    label="Non-Binary"
+                    sx={{ color: '#000', '& .MuiRadio-root': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked': { color: '#000' }, '& .MuiRadio-colorPrimary.Mui-checked .MuiSvgIcon-root': { color: 'green' } }}
+                  />
                 </RadioGroup>
+
               </FormControl>
             </div>
           </Box>
           <button onClick={() => updateItem(idToEdit)}>Save changes</button>
         </div>
       ) : (
-<div style={{ backgroundColor: '',  display: 'flex', alignItems: 'center',  flexDirection: 'column' }} >
-        {info
-          ? info.map((item) => (
-            <React.Fragment key={item.id}>
-              <Card sx={{ display: 'flex', alignItems: 'center',  maxWidth:350, maxHeight: 350, borderRadius: '5%', padding: '10px',backgroundColor: '#94cbfd' }}>
-                <CardContent>
-                  <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
-                    Gender: {item.gender}
-                  </Typography>
-                  <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
-                    Weight: {item.weight}
-                  </Typography>
-                  <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
-                    Height: {item.height}
-                  </Typography>
-                  <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
-                    Age: {item.age}
-                  </Typography>
-                </CardContent>
-                <CardContent>
-                       {idToEdit === item.id ? (
-                            <button onClick={() => updateItem(item.id)}>
-                              Save changes
-                            </button>
-                          ) : (
-                            <button onClick={() => addInputField(item)}>Edit</button>
-                          )}
-                </CardContent>
-                {/* <CardActions>
+        <div style={{ backgroundColor: '', display: 'flex', alignItems: 'center', flexDirection: 'column' }} >
+          {info
+            ? info.map((item) => (
+              <React.Fragment key={item.id}>
+                <Card sx={{ display: 'flex', alignItems: 'center', minWidth: 350, minHeight: 350, borderRadius: '5%', padding: '10px', backgroundColor: '#94cbfd' }}>
+                  <CardContent>
+                    <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
+                      Gender: {item.gender}
+                    </Typography>
+                    <br />
+                    <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
+                      Weight: {item.weight}
+                    </Typography>
+                    <br />
+                    <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
+                      Height: {item.height}
+                    </Typography>
+                    <br />
+                    <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
+                      Age: {item.age}
+                    </Typography>
+                  </CardContent>
+                  <CardContent>
+                    {idToEdit === item.id ? (
+                            <Button variant="contained" size="large" onClick={() => updateItem(item.id)} >Save changes</Button>
+
+                      // <button class='ProfileBtn' onClick={() => updateItem(item.id)} >
+                      //   Save changes
+                      // </button>
+                    ) : (
+                      <button  onClick={() => addInputField(item)}>Edit</button>
+                    )}
+                  </CardContent>
+                  {/* <CardActions>
                   <Button size="small">Learn More</Button>
                 </CardActions> */}
-              </Card>
-            </React.Fragment>
-          ))
-          : ("loading")}
-      </div>
-    )}
-  </div>
-      )
-        
+                </Card>
+              </React.Fragment>
+            ))
+            : ("loading")}
+        </div>
+      )}
+    </div>
+  )
+
 }
 
 

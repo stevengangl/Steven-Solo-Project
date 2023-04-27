@@ -86,7 +86,7 @@ function LightlyActive(){
             {info.length ? (
                 <>
 
-                    <Card sx={{  maxWidth: 400, maxHeight: 1500, backgroundColor: 'lightgrey', border: '1px solid #000',
+                    <Card sx={{  maxWidth: 400, maxHeight: 1500,  backgroundColor: ' #d3e8ed', border: '1px solid #000',
                         padding: '25px', margin: '2px' }}>
                         <CardHeader
                             // avatar={
