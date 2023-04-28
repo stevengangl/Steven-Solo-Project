@@ -91,6 +91,20 @@ function SimulatorForm() {
                         <FormControlLabel value="Lose" onChange={handleChange} control={<Radio />} label="Loose" />
                     </RadioGroup>
 
+                    <Box sx={{ mt: 2 }}>
+                        <Slider
+                            aria-label="Pounds"
+                            defaultValue={0}
+                            getAriaValueText={valuetext}
+                            valueLabelDisplay="auto"
+                            step={1}
+                            marks
+                            min={0}
+                            max={50}
+                        /><span>lbs</span>
+                    </Box>
+                    <br />
+
                     <FormControl fullWidth style={{ backgroundColor: 'white' }}>
                         <InputLabel id="demo-simple-select-label">Activity Level</InputLabel>
                         <Select
@@ -110,19 +124,9 @@ function SimulatorForm() {
 
                         </Select>
                     </FormControl>
+                    <br />
 
-                    <Box sx={{ mt: 2 }}>
-                        <Slider
-                            aria-label="Pounds"
-                            defaultValue={0}
-                            getAriaValueText={valuetext}
-                            valueLabelDisplay="auto"
-                            step={1}
-                            marks
-                            min={0}
-                            max={100}
-                        /><span>lbs</span>
-                    </Box>
+                  
                     <Stack spacing={2} direction="row">
                         <Button variant="contained" onClick={handleClick}>submit</Button>
                     </Stack>

@@ -26,9 +26,13 @@ function CalculatorPage() {
         }} >
             {/* <Holder /> */}
             <Coma />
+            <br />
             <Sedetary />
+            <br />
             <LightlyActive />
+            <br />
             <ModeratelyActive />
+            <br />
             <VeryActive />
 
         </div>

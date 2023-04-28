@@ -110,7 +110,7 @@ function Sedetary(){
       />
                         <CardContent>
                         <Typography variant="body2" color="black" fontSize='28px'>
-                                Daily Calories Burned:  {Calculate()}
+                                Calories Burned:  {Calculate()}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>

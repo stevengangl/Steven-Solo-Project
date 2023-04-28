@@ -114,7 +114,7 @@ function ModeratelyActive(){
       />
                         <CardContent>
                         <Typography variant="body2" color="black" fontSize='28px'>
-                                Daily Calories Burned:  {Calculate()}
+                                Calories Burned:  {Calculate()}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
@@ -138,7 +138,7 @@ function ModeratelyActive(){
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
                             <Typography
-                                    paragraph fontSize='22px'>  moderate physical activity throughout the day, such as brisk walking, light jogging, cycling, or dancing.
+                                    paragraph fontSize='22px'>  Moderate physical activity throughout the day, such as brisk walking, light jogging, cycling, or dancing.
                                 </Typography>
                             </CardContent>
                         </Collapse>
