@@ -79,7 +79,7 @@ function SimulatorForm() {
                 <h2>Hi {user.username}</h2> */}
 
                 <FormControl >
-                    <FormLabel id="demo-radio-buttons-group-label" sx={{ fontSize: '38px' }}>I want to </FormLabel>
+                    <FormLabel id="demo-radio-buttons-group-label" sx={{ fontSize: '38px'  }}>I want to </FormLabel>
                     <RadioGroup
                         aria-labelledby="demo-radio-buttons-group-label"
                         defaultValue="female"
@@ -87,11 +87,11 @@ function SimulatorForm() {
                         
                         
                     >
-                        <FormControlLabel value="Gain" onChange={handleChange} control={<Radio />} label="Gain" />
+                        <FormControlLabel value="Gain" onChange={handleChange} control={<Radio />} label="Gain"  />
                         <FormControlLabel value="Lose" onChange={handleChange} control={<Radio />} label="Loose" />
                     </RadioGroup>
 
-                    <FormControl fullWidth>
+                    <FormControl fullWidth style={{ backgroundColor: 'white' }}>
                         <InputLabel id="demo-simple-select-label">Activity Level</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"

@@ -171,17 +171,23 @@ function SimulatorTable() {
 
                             </Typography> */}
                             <div>
-                                <Button onClick={handleOpen}>Click here</Button>
+                                {/* <Button onClick={handleOpen}>Click here</Button>
                                 <Modal
                                     open={open}
                                     onClose={handleClose}
                                     aria-labelledby="modal-modal-title"
                                     aria-describedby="modal-modal-description"
                                 >
+
+
+
+
+                                    
                                     <Box sx={style}>
                                         <Typography id="modal-modal-title" variant="h6" component="h2">
                                             <CardContent>
                                                 <Typography variant="body2" color="#008000" fontSize='18px'>
+                                                    
                                                     Approach: Easy
                                                     <br />
                                                     Days: {item.weight * 3500 / 250}
@@ -209,7 +215,7 @@ function SimulatorTable() {
                                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                                         </Typography>
                                     </Box>
-                                </Modal>
+                                </Modal> */}
                             </div>
 
                             <ExpandMore
@@ -226,7 +232,26 @@ function SimulatorTable() {
                                 <Typography variant="body2" color="" fontSize='18px'>
                                 {user.username +   ' burns ' + Math.round(Calculate() * item.active) + ' everyday'} 
                         
+                                Approach: Easy
+                                                    <br />
+                                                    Days: {item.weight * 3500 / 250}
+                                                    <br />
+                                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250
+                                                    <br />
+                                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
+                                                    <br />
 
+                                </Typography>
+                                <br />
+                                <Typography variant="body2" color="" fontSize='18px'>
+                                Approach: Aggressive
+                                                    <br />
+                                                    Days: {item.weight * 3500 / 1000}
+                                                    <br />
+                                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
+                                                    <br />
+                                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
+                                                    <br />
                                 </Typography>
                                 <br />
                                 {/* <Typography variant="body2" color="text.secondary" fontSize='18px'>
