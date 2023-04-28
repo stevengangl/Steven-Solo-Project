@@ -115,16 +115,31 @@ function SimulatorTable() {
 
                 {sim.map((item, index) => (
                     <Card key={index} sx={{
-                        maxWidth: 400, maxHeight: 1500, border: '1px solid #000',
-                        padding: '25px', margin: '2px', backgroundColor: item.todo === 'Gain' ? 'lightgreen' : 'lightblue'
+                        maxWidth: 400, maxHeight: 1500, border: '2px solid #000', borderRadius: '5%',
+                        padding: '25px', margin: '10px', backgroundColor: item.todo === 'Gain' ? '#86e0a1' : '#f0a7df'
                     }}>
-                        <CardHeader
+                        {/* <CardHeader
 
                             title={'Goal: ' + item.todo + ' ' + item.weight + 'lbs'}
-                            // subheader={user.username + 's' + ' daily burned calories ' + Math.round(Calculate() * item.active)}
+                            subheader={ 'Daily Calories needed: ' + Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 500 : -500)))
+                        }
+                        /> */}
+                        <CardHeader
+                            title={
+                            <div style={{ color: 'black', fontStyle: 'bold', fontSize: '28px' }}> 
+                             {'Goal: ' + item.todo + ' ' + item.weight + 'lbs'}
+                              </div>}
+
+                            subheader={
+                                <div style={{ color: 'black', fontStyle: 'italic', fontSize: '24px' }}>
+                                  
+                                Days to accomplish: {item.weight * 3500 / 500}
+                                </div>
+                            }
                         />
+<br />
                         <CardContent>
-                            <Typography variant="body2" color="#" fontSize='18px'>
+                            <Typography variant="body2" color="#" fontSize='24px' fontStyle='bold'>
                                 Activity Level: {
                                     (() => {
                                         switch (item.active) {
@@ -144,12 +159,28 @@ function SimulatorTable() {
                                     })()
                                 }
                                 <br />
+                                <br />
+
                                 Days to accomplish: {item.weight * 3500 / 500}
                                 <br />
-                                Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 500
                                 <br />
-                                Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 500 : -500)))}
+
+                                {/* Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
                                 <br />
+                                <br /> */}
+                                <div style={{ color: 'black', fontStyle: 'bold', fontSize: '24px' }}>
+                                    {'Daily Calories needed: ' +
+                                        Math.round(
+                                            Calculate() * item.active + (item.todo === 'Gain' ? 500 : -500)
+                                        )}
+                                        <br/>
+                                        <br />
+                                        {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active) }
+                                        <br/>
+                                        <br />
+                                       Daily  Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
+                                </div>
+
                                 {/* active level: {item.active}
                                 <br /> */}
 
@@ -229,30 +260,51 @@ function SimulatorTable() {
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
-                                <Typography variant="body2" color="" fontSize='18px'>
-                                {user.username +   ' burns ' + Math.round(Calculate() * item.active) + ' everyday'} 
-                        
-                                Approach: Easy
-                                                    <br />
-                                                    Days: {item.weight * 3500 / 250}
-                                                    <br />
-                                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250
-                                                    <br />
-                                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
-                                                    <br />
+                                <Typography variant="body2" color="" fontSize='20px' fontStyle='bold'>
+                                    {/* {user.username + ' burns ' + Math.round(Calculate() * item.active) + ' everyday'} */}
+<br />
+                                    Approach: Easy
+                                    <br />
+                                    Days to accomplish: {item.weight * 3500 / 250}
+                                    <br />
+                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
+
+                                    {/* Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250 */}
+                                    <br />
+                                    {/* Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))} */}
+                                    Daily Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250
+
+                                    <br />
 
                                 </Typography>
                                 <br />
-                                <Typography variant="body2" color="" fontSize='18px'>
-                                Approach: Aggressive
-                                                    <br />
-                                                    Days: {item.weight * 3500 / 1000}
-                                                    <br />
-                                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
-                                                    <br />
-                                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
-                                                    <br />
+                                <Typography variant="body2" color="" fontSize='20px' fontStyle='bold'>
+                                    {/* {user.username + ' burns ' + Math.round(Calculate() * item.active) + ' everyday'} */}
+<br />
+                                    Approach: Aggressive
+                                    <br />
+                                    Days to accomplish: {item.weight * 3500 / 1000}
+                                    <br />
+                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
+
+                                    {/* Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250 */}
+                                    <br />
+                                    {/* Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))} */}
+                                    Daily Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
+
+                                    <br />
+
                                 </Typography>
+                                {/* <Typography variant="body2" color="" fontSize='18px'>
+                                    Approach: Aggressive
+                                    <br />
+                                    Days: {item.weight * 3500 / 1000}
+                                    <br />
+                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
+                                    <br />
+                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
+                                    <br />
+                                </Typography> */}
                                 <br />
                                 {/* <Typography variant="body2" color="text.secondary" fontSize='18px'>
                                     Approach: Aggressive
