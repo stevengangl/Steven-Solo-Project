@@ -95,7 +95,11 @@ function LightlyActive(){
                             //   </Avatar>
                             // }
 
-                            title='Lightly Active'
+                            title={
+                                <Typography variant="h5" style={{ fontSize: '40px' }}>
+                                  Lightly Active
+                                </Typography>
+                              }
                             // subheader="daily life, running errands going to work "
                         />
                         <CardMedia

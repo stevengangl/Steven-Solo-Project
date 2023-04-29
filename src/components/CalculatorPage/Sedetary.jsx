@@ -97,7 +97,11 @@ function Sedetary(){
                             //   </Avatar>
                             // }
 
-                            title='Sedetary'
+                            title={
+                                <Typography variant="h5" style={{ fontSize: '40px' }}>
+                                  Sedetary
+                                </Typography>
+                              }
                             // subheader="Sitting all day, minimal movements"
                         />
                         <CardMedia

@@ -95,7 +95,11 @@ function VeryActive(){
                             //   </Avatar>
                             // }
 
-                            title='Active'
+                            title={
+                                <Typography variant="h5" style={{ fontSize: '40px' }}>
+                                  Active
+                                </Typography>
+                              }
                             // subheader="hard exercise every day"
                         />
                         <CardMedia

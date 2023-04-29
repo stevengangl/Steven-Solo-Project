@@ -91,14 +91,18 @@ function Coma() {
                         maxWidth: 400, maxHeight: 1500, backgroundColor: 'lightblue', border: '1px solid #000',
                         padding: '25px', margin: '2px'
                     }}>
-                        <CardHeader
+                        <CardHeader  sx={{ fontSize: '30px'}}
                             // avatar={
                             //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
                             //     ?
                             //   </Avatar>
                             // }
 
-                            title='Sleeping'
+                            title={
+                                <Typography variant="h5" style={{ fontSize: '40px' }}>
+                                  Sleeping
+                                </Typography>
+                              }
                         // subheader= "In bed all day"
 
                         />

@@ -99,7 +99,11 @@ function ModeratelyActive(){
                             //   </Avatar>
                             // }
 
-                            title='Moderately Active'
+                            title={
+                                <Typography variant="h5" style={{ fontSize: '40px' }}>
+                                  Moderately Active
+                                </Typography>
+                              }
                             // subheader=" Going for a walk after work everyday,"
                         />
                         <CardMedia
