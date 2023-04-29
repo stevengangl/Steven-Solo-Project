@@ -80,7 +80,7 @@ function SimulatorForm() {
                 <h2>Hi {user.username}</h2> */}
 
                 <FormControl >
-                    <FormLabel id="demo-radio-buttons-group-label" sx={{ fontSize: '30px', color: 'black',   }}>{user.username} goals</FormLabel>
+                    <FormLabel id="demo-radio-buttons-group-label" sx={{ fontSize: '30px', color: 'black',   }}>{user.username}'s Goals</FormLabel>
                     <RadioGroup
                         aria-labelledby="demo-radio-buttons-group-label"
                         defaultValue="female"
@@ -105,10 +105,10 @@ function SimulatorForm() {
                             max={50}
                         /><span>lbs</span>
                     </Box>
-                    <br />
-
+<br />
+Choose your activity level
                     <FormControl fullWidth style={{ backgroundColor: 'white' }}>
-                        <InputLabel id="demo-simple-select-label">Activity Level</InputLabel>
+                        {/* <InputLabel id="demo-simple-select-label">Activity Level</InputLabel> */}
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
@@ -118,11 +118,11 @@ function SimulatorForm() {
                             style={{ width: '200px' }}
 
                         >
-                            <MenuItem value={1}>sleeping</MenuItem>
-                            <MenuItem value={1.2}>sedetary</MenuItem>
-                            <MenuItem value={1.375}>light</MenuItem>
-                            <MenuItem value={1.55}>moderate</MenuItem>
-                            <MenuItem value={1.725}>active</MenuItem>
+                            <MenuItem value={1}>Sleeping</MenuItem>
+                            <MenuItem value={1.2}>Sedetary</MenuItem>
+                            <MenuItem value={1.375}>Light</MenuItem>
+                            <MenuItem value={1.55}>Moderate</MenuItem>
+                            <MenuItem value={1.725}>Active</MenuItem>
 
                         </Select>
                     </FormControl>

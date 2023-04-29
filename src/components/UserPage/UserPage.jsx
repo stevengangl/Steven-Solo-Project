@@ -90,16 +90,16 @@ function handleHints(){
       <br />
       <Card  sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth:350, maxHeight: 350, borderRadius: '5%'}}>
         <CardActionArea onClick={handleHints}>
-          <div  style={{ backgroundColor: '#94cbfd', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+          <div  style={{ backgroundColor: '#c6d5fa', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
             <CardMedia
               component="img"
-              image=''
+              image='https://thumbs.dreamstime.com/b/linear-bulb-did-you-know-text-flat-minimal-style-modern-dyk-logo-graphic-art-design-element-isolated-white-background-195233269.jpg'
               alt=""
               style={{ width: '225px', height: '225px', borderRadius: '95%' }}
             />
             <br />
                  <Typography gutterBottom variant="h5" component="div" fontStyle=''>
-              <b>Fun Faqs!</b>
+              <b>Fun Facts!</b>
             </Typography>
           </div>
 

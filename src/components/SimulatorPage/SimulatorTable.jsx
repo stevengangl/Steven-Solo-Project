@@ -111,7 +111,7 @@ function SimulatorTable() {
 
 
 
-            <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
+            <div className='SimulatorCard' style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
 
                 {sim.map((item, index) => (
                     <Card key={index} sx={{
@@ -131,15 +131,10 @@ function SimulatorTable() {
                               </div>}
 
                             subheader={
-                                <div style={{ color: 'black', fontStyle: 'italic', fontSize: '24px' }}>
+                                <div style={{ color: 'black', fontStyle: 'bold', fontSize: '24px' }}>
                                   
-                                Days to accomplish: {item.weight * 3500 / 500}
-                                </div>
-                            }
-                        />
+                                Days To Accomplish: {item.weight * 3500 / 500}
 <br />
-                        <CardContent>
-                            <Typography variant="body2" color="#" fontSize='24px' fontStyle='bold'>
                                 Activity Level: {
                                     (() => {
                                         switch (item.active) {
@@ -158,27 +153,22 @@ function SimulatorTable() {
                                         }
                                     })()
                                 }
-                                <br />
-                                <br />
-
-                                Days to accomplish: {item.weight * 3500 / 500}
-                                <br />
-                                <br />
-
-                                {/* Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
-                                <br />
-                                <br /> */}
-                                <div style={{ color: 'black', fontStyle: 'bold', fontSize: '24px' }}>
-                                    {'Daily Calories needed: ' +
+                                </div>
+                            }
+                        />
+<br />
+                        <CardContent>
+                            <Typography variant="body2" color="#"  fontStyle='bold'>
+                            
+            
+                                <div style={{ color: 'black', fontStyle: 'bold', fontSize: '18px' }}>
+                                    {'Daily Calories Needed: ' +
                                         Math.round(
                                             Calculate() * item.active + (item.todo === 'Gain' ? 500 : -500)
                                         )}
-                                        <br/>
-                                        <br />
                                         {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active) }
-                                        <br/>
-                                        <br />
-                                       Daily  Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
+                                  <br />
+                                       Daily Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
                                 </div>
 
                                 {/* active level: {item.active}
@@ -186,69 +176,9 @@ function SimulatorTable() {
 
                             </Typography>
                         </CardContent>
-                        <IconButton aria-label="" sx={{
-                            position: 'relative',
-                            top: '0px',
-                            left: '0px',
-                        }} onClick={() => {
-                            console.log('item.id:', item.id);
-                            dispatch({ type: 'DELETE_SIM_ITEM', payload: item.id })
-                        }}  >
-                            <DeleteIcon />
-                        </IconButton >
+           
                         <CardActions disableSpacing>
-                            {/* <Typography variant="body2" color="">
-                                click here for more options
-
-                            </Typography> */}
-                            <div>
-                                {/* <Button onClick={handleOpen}>Click here</Button>
-                                <Modal
-                                    open={open}
-                                    onClose={handleClose}
-                                    aria-labelledby="modal-modal-title"
-                                    aria-describedby="modal-modal-description"
-                                >
-
-
-
-
-                                    
-                                    <Box sx={style}>
-                                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                                            <CardContent>
-                                                <Typography variant="body2" color="#008000" fontSize='18px'>
-                                                    
-                                                    Approach: Easy
-                                                    <br />
-                                                    Days: {item.weight * 3500 / 250}
-                                                    <br />
-                                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250
-                                                    <br />
-                                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
-                                                    <br />
-
-                                                </Typography>
-                                                <br />
-                                                <Typography variant="body2" color="red" fontSize='18px'>
-                                                    Approach: Aggressive
-                                                    <br />
-                                                    Days: {item.weight * 3500 / 1000}
-                                                    <br />
-                                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
-                                                    <br />
-                                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
-                                                    <br />
-
-                                                </Typography>
-
-                                            </CardContent>                                        </Typography>
-                                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                        </Typography>
-                                    </Box>
-                                </Modal> */}
-                            </div>
-
+                
                             <ExpandMore
                                 expand={expanded}
                                 onClick={handleExpandClick}
@@ -257,6 +187,17 @@ function SimulatorTable() {
                             >
                                 <ExpandMoreIcon />
                             </ExpandMore>
+                            <IconButton aria-label="" sx={{
+                                
+                            position: 'relative',
+                            bottom: '0px',
+                            left: '0px',
+                        }} onClick={() => {
+                            console.log('item.id:', item.id);
+                            dispatch({ type: 'DELETE_SIM_ITEM', payload: item.id })
+                        }}  >
+                            <DeleteIcon fontSize="large" color="black" />
+                        </IconButton >
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
@@ -265,9 +206,9 @@ function SimulatorTable() {
 <br />
                                     Approach: Easy
                                     <br />
-                                    Days to accomplish: {item.weight * 3500 / 250}
+                                    Days To Accomplish: {item.weight * 3500 / 250}
                                     <br />
-                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
+                                    Daily Calories Needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
 
                                     {/* Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250 */}
                                     <br />
@@ -283,9 +224,9 @@ function SimulatorTable() {
 <br />
                                     Approach: Aggressive
                                     <br />
-                                    Days to accomplish: {item.weight * 3500 / 1000}
+                                    Days To Accomplish: {item.weight * 3500 / 1000}
                                     <br />
-                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
+                                    Daily Calories Needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
 
                                     {/* Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250 */}
                                     <br />
@@ -295,28 +236,7 @@ function SimulatorTable() {
                                     <br />
 
                                 </Typography>
-                                {/* <Typography variant="body2" color="" fontSize='18px'>
-                                    Approach: Aggressive
-                                    <br />
-                                    Days: {item.weight * 3500 / 1000}
-                                    <br />
-                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
-                                    <br />
-                                    Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
-                                    <br />
-                                </Typography> */}
-                                <br />
-                                {/* <Typography variant="body2" color="text.secondary" fontSize='18px'>
-                                    Approach: Aggressive
-                                    <br />
-                                    Days: {item.weight * 3500 / 1000}
-                                    <br />
-                                    Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
-                                    <br />
-                                    Daily Calories needed: {(Calculate() + (item.todo === 'Gain' ? 1000 : -1000))}
-                                    <br />
-
-                                </Typography> */}
+         
 
                             </CardContent>
                         </Collapse>

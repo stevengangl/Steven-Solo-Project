@@ -21,22 +21,31 @@ function Hints() {
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
+ 
+  };
+
+  const h1Style = {
+    fontSize: '',
+    fontWeight: 'bold',
+    color: 'black',
+    fontFamily: 'italic'
+ 
   };
 
   return (
     <>
-      {/* <div style={textStyle}>
-        <h1>Food Comparisons</h1>
-        <a href="#section1" className="btn">1</a>
-      </div> */}
+      <div style={textStyle}>
+        <h1 style={h1Style}>Food Comparisons</h1>
+        {/* <a href="#section1" className="btn">1</a> */}
+      </div>
 
       <div style={divStyle} className="section one" id="section1">
-        <img src={oreo} alt="oreo" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-        <img src={chips} alt="chips" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-        <img src={cereal} alt="cereal" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-        <img src={protein} alt="protein" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-        <img src={chicken} alt="chicken" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-        <img src={iceCream} alt="iceCream" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={oreo} alt="oreo" style={{ padding: '10px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={chips} alt="chips" style={{ padding: '10px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={cereal} alt="cereal" style={{ padding: '10px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={protein} alt="protein" style={{ padding: '10px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={chicken} alt="chicken" style={{ padding: '10px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={iceCream} alt="iceCream" style={{ padding: '10px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
       </div>
 
       {/* <div className="nav">
