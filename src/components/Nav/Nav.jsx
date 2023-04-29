@@ -173,6 +173,10 @@ function Nav() {
                   Simulator Page
                 </Link>
 
+                <Link className="navLink" to="/faqs" onClick={handleLinkClick}>
+                  Fun Faqs
+                </Link>
+
                 <LogOutButton className="navLink" onClick={handleLinkClick} />
               </>
             )}

@@ -19,6 +19,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import CalculatorPage from '../CalculatorPage/CalculatorPage';
 import SimulatorPage from '../SimulatorPage/SimulatorPage';
+import Hints from '../FunFaqs/FunFaqsPage';
 
 import './App.css';
 
@@ -91,6 +92,14 @@ function App() {
             path="/simulator"
           >
             <SimulatorPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // ⭐️ logged in shows Hints page
+            exact
+            path="/faqs"
+          >
+            <Hints/>
           </ProtectedRoute>
 
           <Route

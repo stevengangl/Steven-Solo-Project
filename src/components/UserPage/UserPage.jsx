@@ -23,6 +23,9 @@ function handleProfile(){
 function handleSimulator(){
   history.push('/simulator')
 }
+function handleHints(){
+  history.push('/faqs')
+}
 
   return (
 
@@ -81,6 +84,24 @@ function handleSimulator(){
             </Typography>
           </div>
   
+
+        </CardActionArea>
+      </Card>
+      <br />
+      <Card  sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', maxWidth:350, maxHeight: 350, borderRadius: '5%'}}>
+        <CardActionArea onClick={handleHints}>
+          <div  style={{ backgroundColor: '#94cbfd', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+            <CardMedia
+              component="img"
+              image=''
+              alt=""
+              style={{ width: '225px', height: '225px', borderRadius: '95%' }}
+            />
+            <br />
+                 <Typography gutterBottom variant="h5" component="div" fontStyle=''>
+              <b>Fun Faqs!</b>
+            </Typography>
+          </div>
 
         </CardActionArea>
       </Card>
