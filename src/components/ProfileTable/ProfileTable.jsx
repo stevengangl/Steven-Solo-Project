@@ -28,6 +28,8 @@ import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from "@mui/material";
 import Stack from '@mui/material/Stack';
+import me from '../images/DSC09714.jpg'
+
 
 
 
@@ -204,48 +206,57 @@ function ProfileTable() {
           {info
             ? info.map((item) => (
               <React.Fragment key={item.id}>
-                <Card sx={{ display: 'flex', minWidth: 350, minHeight: 600, borderRadius: '5%', padding: '10px', backgroundColor: '  #1a7bd67b', color: ' black' }}>
+                <Card sx={{ display: 'flex', minWidth: 350, borderRadius: '10px', padding: '10px', backgroundColor: '  #1a7bd67b', color: ' black' }}>
                   <CardActionArea>
-                  <CardMedia
-                  component="img"
-                    sx={{ height: 140 }}
-                    image="/static/images/cards/contemplative-reptile.jpg"
-                    title="picture goes here"
-                  />
-                  <CardContent>
-                    <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
-                      Gender: {item.gender}
-                    </Typography>
-                    <br />
-                    <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
-                      Weight: {item.weight}
-                    </Typography>
-                    <br />
-                    <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
-                      Height: {item.height}
-                    </Typography>
-                    <br />
-                    <Typography sx={{ fontSize: 24, fontWeight: 'bold', fontFamily: 'sans-serif' }} >
-                      Age: {item.age}
-                    </Typography>
-                  </CardContent>
-                  <CardContent>
-                    {idToEdit === item.id ? (
-                      // <button onClick={() => updateItem(item.id)} >
-                      //   Save changes
-                      // </button>
-                            <Button variant="contained" onClick={() => updateItem(item.id)} sx={{ backgroundColor: 'green' }}>Save</Button>
 
-                    ) : (
-                      // <button onClick={() => addInputField(item)}>Edit</button>
-                      <Button variant="contained" onClick={() => addInputField(item)} sx={{ backgroundColor: 'grey' }} >Edit</Button>
 
-                    )}
-                  </CardContent>
-                  {/* <CardActions>
+                    <Typography variant="h5" style={{ fontSize: '40px' }}>
+                    {user.username}'s Profile
+                    </Typography>
+
+<br />
+                    <CardMedia
+                      component="img"
+                      sx={{ height: 200, borderRadius:'10px' }}
+                      image={me}
+                      title="picture goes here"
+                      borderRadius='10px'
+                    />
+
+                    <CardContent>
+                      <Typography sx={{ fontSize: 24, fontWeight: '', fontFamily: 'sans-serif' }} >
+                        Gender: {item.gender}
+                      </Typography>
+                      <br />
+                      <Typography sx={{ fontSize: 24, fontWeight: '', fontFamily: 'sans-serif' }} >
+                        Weight: {item.weight}
+                      </Typography>
+                      <br />
+                      <Typography sx={{ fontSize: 24, fontWeight: '', fontFamily: 'sans-serif' }} >
+                        Height: {item.height}
+                      </Typography>
+                      <br />
+                      <Typography sx={{ fontSize: 24, fontWeight: '', fontFamily: 'sans-serif' }} >
+                        Age: {item.age}
+                      </Typography>
+                    </CardContent>
+                    <CardContent>
+                      {idToEdit === item.id ? (
+                        // <button onClick={() => updateItem(item.id)} >
+                        //   Save changes
+                        // </button>
+                        <Button variant="contained" onClick={() => updateItem(item.id)} sx={{ backgroundColor: 'green' }}>Save</Button>
+
+                      ) : (
+                        // <button onClick={() => addInputField(item)}>Edit</button>
+                        <Button variant="contained" onClick={() => addInputField(item)} sx={{ backgroundColor: 'grey' }} >Edit</Button>
+
+                      )}
+                    </CardContent>
+                    {/* <CardActions>
                   <Button size="small">Learn More</Button>
                 </CardActions> */}
-                </CardActionArea>
+                  </CardActionArea>
                 </Card>
               </React.Fragment>
             ))

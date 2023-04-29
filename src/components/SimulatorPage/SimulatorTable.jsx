@@ -14,11 +14,18 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { useHistory } from "react-router-dom";
 
 
 function SimulatorTable() {
 
+
+    const history = useHistory();
     const ExpandMore = styled((props) => {
         const { expand, ...other } = props;
         return <IconButton {...other} />;
@@ -46,6 +53,18 @@ function SimulatorTable() {
     const user = useSelector((store) => store.user);
     const sim = useSelector((store) => store.SimulatorPageReducer);
     const info = useSelector((store) => store.ProfilePageReducer);
+
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
 
 
     function Calculate() {
@@ -94,9 +113,9 @@ function SimulatorTable() {
         p: 4,
     };
 
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    // const [open, setOpen] = React.useState(false);
+    // const handleOpen = () => setOpen(true);
+    // const handleClose = () => setOpen(false);
 
     if (!sim || !sim.length) {
         // Render loading HTML or any other placeholder content
@@ -126,49 +145,49 @@ function SimulatorTable() {
                         /> */}
                         <CardHeader
                             title={
-                            <div style={{ color: 'black', fontStyle: 'bold', fontSize: '28px' }}> 
-                             {'Goal: ' + item.todo + ' ' + item.weight + 'lbs'}
-                              </div>}
+                                <div style={{ color: 'black', fontStyle: 'bold', fontSize: '28px' }}>
+                                    {'Goal: ' + item.todo + ' ' + item.weight + 'lbs'}
+                                </div>}
 
                             subheader={
                                 <div style={{ color: 'black', fontStyle: 'bold', fontSize: '24px' }}>
-                                  
-                                Days To Accomplish: {item.weight * 3500 / 500}
-<br />
-                                Activity Level: {
-                                    (() => {
-                                        switch (item.active) {
-                                            case 1:
-                                                return 'Sleeping';
-                                            case 1.2:
-                                                return 'Sedetary';
-                                            case 1.375:
-                                                return 'Light';
-                                            case 1.55:
-                                                return 'Moderate';
-                                            case 1.725:
-                                                return 'Active';
-                                            default:
-                                                return 'Unknown';
-                                        }
-                                    })()
-                                }
+
+                                    Days To Accomplish: {item.weight * 3500 / 500}
+                                    <br />
+                                    Activity Level: {
+                                        (() => {
+                                            switch (item.active) {
+                                                case 1:
+                                                    return 'Sleeping';
+                                                case 1.2:
+                                                    return 'Sedetary';
+                                                case 1.375:
+                                                    return 'Light';
+                                                case 1.55:
+                                                    return 'Moderate';
+                                                case 1.725:
+                                                    return 'Active';
+                                                default:
+                                                    return 'Unknown';
+                                            }
+                                        })()
+                                    }
                                 </div>
                             }
                         />
-<br />
+                        <br />
                         <CardContent>
-                            <Typography variant="body2" color="#"  fontStyle='bold'>
-                            
-            
+                            <Typography variant="body2" color="#" fontStyle='bold'>
+
+
                                 <div style={{ color: 'black', fontStyle: 'bold', fontSize: '18px' }}>
                                     {'Daily Calories Needed: ' +
                                         Math.round(
                                             Calculate() * item.active + (item.todo === 'Gain' ? 500 : -500)
                                         )}
-                                        {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active) }
-                                  <br />
-                                       Daily Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
+                                    {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active)}
+                                    <br />
+                                    Daily Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
                                 </div>
 
                                 {/* active level: {item.active}
@@ -176,9 +195,9 @@ function SimulatorTable() {
 
                             </Typography>
                         </CardContent>
-           
+
                         <CardActions disableSpacing>
-                
+
                             <ExpandMore
                                 expand={expanded}
                                 onClick={handleExpandClick}
@@ -187,23 +206,58 @@ function SimulatorTable() {
                             >
                                 <ExpandMoreIcon />
                             </ExpandMore>
+
                             <IconButton aria-label="" sx={{
-                                
-                            position: 'relative',
-                            bottom: '0px',
-                            left: '0px',
-                        }} onClick={() => {
-                            console.log('item.id:', item.id);
-                            dispatch({ type: 'DELETE_SIM_ITEM', payload: item.id })
-                        }}  >
-                            <DeleteIcon fontSize="large" color="black" />
-                        </IconButton >
+
+                                position: 'relative',
+                                bottom: '0px',
+                                left: '0px',
+                            }}  >
+                                <DeleteIcon fontSize="large" color="" onClick={handleClickOpen} />
+                            </IconButton >
+
+                            <Dialog
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="alert-dialog-title"
+                                aria-describedby="alert-dialog-description"
+                            >
+                                <DialogTitle id="alert-dialog-title">
+                                </DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-description">
+                                        Are you sure you want to delete
+                                    </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button onClick={handleClose}>Disagree</Button>
+                                    <Button
+                                        onClick={() => {
+                                            dispatch({ type: 'DELETE_SIM_ITEM', payload: item.id });
+                                            handleClose(); // Add this line to close the dialog
+                                            history.push('/simulator');
+                                        }}
+                                        autoFocus
+                                    >
+                                        Agree
+                                    </Button>
+
+                                </DialogActions>
+                            </Dialog>
+                            {/* <IconButton aria-label="" sx={{
+
+                                position: 'relative',
+                                bottom: '0px',
+                                left: '0px',
+                            }}  >
+                                <DeleteIcon fontSize="large" color="black" onClick={handleClickOpen} />
+                            </IconButton > */}
                         </CardActions>
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <CardContent>
                                 <Typography variant="body2" color="" fontSize='20px' fontStyle='bold'>
                                     {/* {user.username + ' burns ' + Math.round(Calculate() * item.active) + ' everyday'} */}
-<br />
+                                    <br />
                                     Approach: Easy
                                     <br />
                                     Days To Accomplish: {item.weight * 3500 / 250}
@@ -221,7 +275,7 @@ function SimulatorTable() {
                                 <br />
                                 <Typography variant="body2" color="" fontSize='20px' fontStyle='bold'>
                                     {/* {user.username + ' burns ' + Math.round(Calculate() * item.active) + ' everyday'} */}
-<br />
+                                    <br />
                                     Approach: Aggressive
                                     <br />
                                     Days To Accomplish: {item.weight * 3500 / 1000}
@@ -236,7 +290,7 @@ function SimulatorTable() {
                                     <br />
 
                                 </Typography>
-         
+
 
                             </CardContent>
                         </Collapse>
