@@ -25,26 +25,28 @@ function Hints() {
 
   return (
     <>
-      <div style={textStyle}> 
+      {/* <div style={textStyle}>
+        <h1>Food Comparisons</h1>
+        <a href="#section1" className="btn">1</a>
+      </div> */}
 
-        <h1>Food Volume vs. Calories</h1>
-        <h3>Not all food is created equal</h3>
-        <h4>Discover the difference in volume for 200 calories across various foods</h4>
-      </div>
-
-
-      <div style={divStyle}>
-        <img src={oreo} alt="chips" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+      <div style={divStyle} className="section one" id="section1">
+        <img src={oreo} alt="oreo" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
         <img src={chips} alt="chips" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-        <img src={cereal} alt="chips" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-
-        <img src={protein} alt="chips" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-        <img src={chicken} alt="chips" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-
-        <img src={iceCream} alt="chips" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
-
+        <img src={cereal} alt="cereal" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={protein} alt="protein" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={chicken} alt="chicken" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
+        <img src={iceCream} alt="iceCream" style={{ padding: '4px', borderRadius: '5%', border: '1px solid lightblue', backgroundColor: 'lightblue' }} />
       </div>
-      {/* <img src={calorie} alt="calorie" /> */}
+
+      {/* <div className="nav">
+        <a href="#section1" className="btn">1</a>
+        Add other navigation links here
+      </div>
+      <div className="section one" id="section1">
+        section 1
+      </div> */}
+      {/* Add other sections here */}
     </>
   )
 }
