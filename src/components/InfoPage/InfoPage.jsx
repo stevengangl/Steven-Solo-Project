@@ -46,18 +46,19 @@ function InfoPage() {
 </div>
 
 <div className='Thanks'>
-<h3>Thanks to all the instructors at Prime Digital Academy, Id also like to thank the Aquamarine cohort for all the help and support along the way!</h3>
+<h3>Special thanks to all the instructors at Prime Digital Academy, my cohort and family for help and support along the way.</h3>
 
 </div>
 
 
 <div className='contactInfo'>
-<h2>
-  Visit my Linkedin: <a href='https://www.linkedin.com/in/steven-gangl-965832218/' target='_blank' > Click Here</a>
+  <h3>Contact me</h3>
+<h4>
+  Visit my Linkedin: <a href='https://www.linkedin.com/in/steven-gangl-965832218/' target='_blank' > linkedin.com/steven-gangl</a>
   <br />
-  Visit my GitHub: <a href='https://github.com/stevengangl' target='_blank' > Click Here</a>
+  Visit my GitHub: <a href='https://github.com/stevengangl' target='_blank' > github.com/stevengangl</a>
 
-</h2>
+</h4>
 
 
     </div>

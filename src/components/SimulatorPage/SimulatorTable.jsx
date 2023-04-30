@@ -152,8 +152,8 @@ function SimulatorTable() {
                             subheader={
                                 <div style={{ color: 'black', fontStyle: 'bold', fontSize: '24px' }}>
 
-                                    Days To Accomplish: {item.weight * 3500 / 500}
-                                    <br />
+                                    {/* Days To Accomplish: {item.weight * 3500 / 500} */}
+
                                     Activity Level: {
                                         (() => {
                                             switch (item.active) {
@@ -181,13 +181,20 @@ function SimulatorTable() {
 
 
                                 <div style={{ color: 'black', fontStyle: 'bold', fontSize: '18px' }}>
+                                    Approach: Normal
+                                    <br />
+                                    Days To Accomplish: {item.weight * 3500 / 500}
+
+                                    {/* {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active)} */}
+                                    <br />       {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active)}
+
+                                    <br />
+                                    Daily Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
+                                    <br />
                                     {'Daily Calories Needed: ' +
                                         Math.round(
                                             Calculate() * item.active + (item.todo === 'Gain' ? 500 : -500)
                                         )}
-                                    {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active)}
-                                    <br />
-                                    Daily Calorie {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')}: 500
                                 </div>
 
                                 {/* active level: {item.active}
@@ -262,12 +269,15 @@ function SimulatorTable() {
                                     <br />
                                     Days To Accomplish: {item.weight * 3500 / 250}
                                     <br />
-                                    Daily Calories Needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
+                                    {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active)}
+                                    <br />
+                                    Daily Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250
 
                                     {/* Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250 */}
                                     <br />
                                     {/* Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))} */}
-                                    Daily Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250
+                                    Daily Calories Needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))}
+
 
                                     <br />
 
@@ -280,12 +290,15 @@ function SimulatorTable() {
                                     <br />
                                     Days To Accomplish: {item.weight * 3500 / 1000}
                                     <br />
-                                    Daily Calories Needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
+                                    {' Daily Calorie Burned: ' + Math.round(Calculate() * item.active)}
+                                    <br />
+                                    Daily Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
 
                                     {/* Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 250 */}
                                     <br />
                                     {/* Daily Calories needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 250 : -250)))} */}
-                                    Daily Calorie: {(item.todo === 'Gain' ? 'Surplus' : 'Defecit')} 1000
+                                    Daily Calories Needed: {Math.round((Calculate() * item.active + (item.todo === 'Gain' ? 1000 : -1000)))}
+
 
                                     <br />
 

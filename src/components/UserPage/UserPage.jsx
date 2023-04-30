@@ -35,13 +35,13 @@ function handleHints(){
           <div  style={{ backgroundColor: '#94cbfd', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
             <CardMedia
               component="img"
-              image='https://cdn.dribbble.com/users/3293/screenshots/2591498/screen_shot_2016-03-15_at_12.51.52_pm.png'
+              image='https://oneill.law.georgetown.edu/wp-content/uploads/2021/06/generic-profile.png'
               alt=""
               style={{ width: '225px', height: '225px', borderRadius: '95%' }}
             />
             <br />
                  <Typography gutterBottom variant="h5" component="div" fontStyle=''>
-              <b>Edit Profile!</b>
+              <b>{user.username}'s Profile</b>
             </Typography>
           </div>
 
