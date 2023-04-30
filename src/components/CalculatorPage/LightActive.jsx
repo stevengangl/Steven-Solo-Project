@@ -138,7 +138,7 @@ function LightlyActive(){
                             <CardContent>
                 
                                 <Typography
-                                    paragraph fontSize='22px'> light physical activity throughout the day, such as taking short walks, doing household chores, or standing for extended periods of time.
+                                    paragraph fontSize='22px'> Light physical activity throughout the day, such as taking short walks, doing household chores, or standing for extended periods of time.
                                 </Typography>
                             </CardContent>
                         </Collapse>

@@ -157,10 +157,6 @@ function Nav() {
                   Home
                 </Link>
 
-                <Link className="navLink" to="/info" onClick={handleLinkClick}>
-                  Info Page
-                </Link>
-
                 <Link className="navLink" to="/profile" onClick={handleLinkClick}>
                   Profile Page
                 </Link>
@@ -175,6 +171,10 @@ function Nav() {
 
                 <Link className="navLink" to="/faqs" onClick={handleLinkClick}>
                   Fun Faqs
+                </Link>
+
+                <Link className="navLink" to="/about" onClick={handleLinkClick}>
+                  About Page
                 </Link>
 
                 <LogOutButton className="navLink" onClick={handleLinkClick} />
