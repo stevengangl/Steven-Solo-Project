@@ -34,7 +34,7 @@ function InfoPage() {
          HealthyMe delivers unique and personalized insights that 
          enable users to make informed decisions and lead healthier lives.</h4>
 
-<h2>Technologies Used:
+<h4>Technologies Used:
   <li>React</li>
   <li>Node.js</li>
   <li>JavaScript</li>
@@ -42,23 +42,22 @@ function InfoPage() {
   <li>CSS</li>
   <li>PostgreSQL</li>
   <li>Material-UI</li>
-</h2>
-</div>
-
-<div className='Thanks'>
-<h3>Special thanks to all the instructors at Prime Digital Academy, my cohort and family for help and support along the way.</h3>
-
-</div>
-
-
-<div className='contactInfo'>
-  <h3>Contact me</h3>
-<h4>
-  Visit my Linkedin: <a href='https://www.linkedin.com/in/steven-gangl-965832218/' target='_blank' > linkedin.com/steven-gangl</a>
-  <br />
-  Visit my GitHub: <a href='https://github.com/stevengangl' target='_blank' > github.com/stevengangl</a>
-
 </h4>
+
+<h4>Special thanks to all the instructors at Prime Digital Academy, my cohort and family for help and support along the way.</h4>
+  <h4>Contact Me:  
+    <br/>
+     Visit my Linkedin: <a href='https://www.linkedin.com/in/steven-gangl-965832218/' target='_blank' > linkedin.com/steven-gangl</a>
+     <br />
+  Visit my GitHub: <a href='https://github.com/stevengangl' target='_blank' > github.com/stevengangl</a>
+  </h4>
+
+
+
+  {/* Visit my Linkedin: <a href='https://www.linkedin.com/in/steven-gangl-965832218/' target='_blank' > linkedin.com/steven-gangl</a>
+  Visit my GitHub: <a href='https://github.com/stevengangl' target='_blank' > github.com/stevengangl</a>
+ */}
+
 
 
     </div>
