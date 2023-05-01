@@ -77,7 +77,7 @@ function ProfileForm(){
              payload: {  height, weight: Number(newInput.weight), gender, age: Number(newInput.age)
                 } }), 
         dispatch({ type: 'CHANGE_PROFILE_CREATED', payload: user.id})//put request to change profile created to true...this is for conditional rendering
-        // window.location.reload()
+        window.location.reload()
 
     };
 
