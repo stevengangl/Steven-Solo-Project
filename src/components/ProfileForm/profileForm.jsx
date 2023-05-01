@@ -76,7 +76,7 @@ function ProfileForm(){
             type: 'POST_INFO',
              payload: {  height, weight: Number(newInput.weight), gender, age: Number(newInput.age)
                 } }), 
-        dispatch({ type: 'CHANGE_PROFILE_CREATED', payload: user.id}),//put request to change profile created to true...this is for conditional rendering
+        dispatch({ type: 'CHANGE_PROFILE_CREATED', payload: user.id})//put request to change profile created to true...this is for conditional rendering
         // window.location.reload()
 
     };
@@ -178,7 +178,7 @@ function ProfileForm(){
                         </FormControl>
                         <br></br>
                         {/* <Button variant="contained">Submit</Button> */}
-                        <Button variant="contained" onClick={handleClick}type="submit" endIcon={<SendIcon />}>Submit</Button>
+                        <Button variant="contained" type="submit" endIcon={<SendIcon />}>Submit</Button>
 
 
                     </div>
