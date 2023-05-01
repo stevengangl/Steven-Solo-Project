@@ -178,7 +178,7 @@ function ProfileForm(){
                         </FormControl>
                         <br></br>
                         {/* <Button variant="contained">Submit</Button> */}
-                        <Button variant="contained" type="submit" endIcon={<SendIcon />}>Submit</Button>
+                        <Button variant="contained" onClick={handleClick}type="submit" endIcon={<SendIcon />}>Submit</Button>
 
 
                     </div>
