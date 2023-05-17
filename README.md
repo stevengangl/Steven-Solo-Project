@@ -37,7 +37,7 @@ https://docs.google.com/document/d/1a7xnbiu2F6QiBXnDUWRtgP5uLCC-g9K3BFDq-cGp-vw/
 https://www.figma.com/file/QDvDuOomnMXDJcYz454hdu/Steven-solo-wireframe?type=design&node-id=0%3A1&t=4GqPT5FXDfREz3mc-1 
 ## Acknowledgements
 
-Thank's you to the Instructors of Prime Digital Academy and to my cohort mates of Aquamarine!
+Thank you you to the Instructors of Prime Digital Academy and to my cohort mates of Aquamarine!
 
 ## Contacts
 
