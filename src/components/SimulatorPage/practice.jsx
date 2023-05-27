@@ -65,5 +65,5 @@ function SimulatorTable() {
         </>
     )
 };
-
+//check this comp
 export default SimulatorTable;
